@@ -52,14 +52,46 @@
         footer {
             background-color: #d7ccc8;
         }
+
+        .sign-in-button {
+            padding: 8px 14px;
+            border: 1px solid #b45309;
+            border-radius: 6px;
+            background-color: white;
+            color: #b45309;
+            cursor: pointer;
+        }
+
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 12px 40px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-left h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header-left p {
+            margin: 4px 0 0 0;
+            font-size: 14px;
+            color: #555;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Frontend</h1>
-        <p>Welcome to the frontend of our application!</p>
-        <button class="Sign-In">Sign In</button>
+    <header class="site-header">
+        <div class="header-left">
+            <h1>Frontend</h1>
+            <p>Welcome to the frontend of our application!</p>
+        </div>
+        <button class="sign-in-button">Sign In</button>
     </header>
 
     <nav>
