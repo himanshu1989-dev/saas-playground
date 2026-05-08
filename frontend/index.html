@@ -2,64 +2,44 @@
 <html lang="en">
 
 <head>
+    <title>Frontend</title>
     <meta charset="UTF-8">
-    <title>My First Web Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 40px;
-        }
-
-        h1 {
-            background-color: blueviolet;
-            color: white;
-            padding: 16px;
-            border-radius: 8px;
-        }
-
-        p {
-            background-color: chartreuse;
-            padding: 12px;
-            border-radius: 8px;
-        }
-
-        button {
-            display: block;
-            margin-top: 20px;
-            padding: 12px 18px;
-            border: none;
-            border-radius: 8px;
-            background-color: black;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #444;
-        }
-    </style>
 </head>
 
 <body>
-    <h1>
-        My first Heading
-    </h1>
-    <p>
-        My first paragraph
-    </p>
-    <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia Link</a>
+    <header>
+        <h1>Frontend</h1>
+        <p>Welcome to the frontend of our application!</p>
+    </header>
 
-    <br><br>
-    <button onclick="openAnalyzeDishPage()">
-        Analyze Dish
-    </button>
+    <nav>
+        <h2>Navigation</h2>
+        <p>Use the links below to navigate through the application:</p>
+    </nav>
 
-    <script>
-        function openAnalyzeDishPage() {
-            window.location.href = "https://maunikagowardhan.co.uk/cook-in-a-curry/";
-        }
-    </script>
+    <main>
+        <h2>Main Content</h2>
+        <p>This is where the main content of the frontend will be displayed.</p>
+
+        <section>
+            <h2>Section 1</h2>
+            <p>This is the first section of the main content.</p>
+
+            <article>
+                <h3>Article 1</h3>
+                <p>This is the first article in section 1.</p>
+            </article>
+        </section>
+
+        <aside>
+            <h2>Sidebar</h2>
+            <p>This is the sidebar where additional information can be displayed.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>2023 Frontend. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
