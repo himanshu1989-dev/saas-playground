@@ -19,8 +19,52 @@
       }
       main {
         background-color: #e6f7ff;
-        padding: 20px;
+        padding: 40px 20px;
         min-height: 400px;
+      }
+
+      .steps-section {
+        text-align: center;
+      }
+
+      .steps-section h2 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .steps-intro {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 30px;
+      }
+
+      .steps-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .step-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 24px;
+        width: 250px;
+      }
+
+      .step-card h3 {
+        color: #b45309;
+        margin-bottom: 8px;
+      }
+
+      .step-card h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .step-card p {
+        color: #555;
+        line-height: 1.5;
       }
       footer {
         background-color: #eeeeee;
@@ -94,8 +138,40 @@
       </div>
     </header>
     <main>
-      <h1>Main section</h1>
-      <p>This is the main section of the page.</p>
+      <section class="steps-section">
+        <h2>How Recipe Assistant Works</h2>
+        <p class="steps-intro">
+          Turn a dish photo into recipes, videos, and food guidance in three
+          simple steps.
+        </p>
+        <div class="steps-container">
+          <article class="step-card">
+            <h3>Step 1</h3>
+            <h4>Upload Image</h4>
+            <p>
+              Upload a photo of the dish you want to identify or learn about.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <h3>Step 2</h3>
+            <h4>Analyze Dish</h4>
+            <p>
+              Click the analyze button so Recipe Assistant can identify the
+              dish.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <h3>Step 3</h3>
+            <h4>Get Recipes and Videos</h4>
+            <p>
+              Receive recipe ideas, cooking videos, and guidance on how to enjoy
+              the dish.
+            </p>
+          </article>
+        </div>
+      </section>
     </main>
     <footer>
       <p>2026 Recipe Assistant. All rights reserved.</p>
