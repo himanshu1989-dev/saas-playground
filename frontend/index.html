@@ -11,7 +11,7 @@
         padding: 0;
       }
       header {
-        background-color: #fff3d6;
+        background-color: #f3f7df;
         display: grid;
         grid-template-columns: 1fr auto 1fr;
         align-items: center;
@@ -37,10 +37,10 @@
 
       .header-center h1 {
         margin: 0;
-        font-size: 44px;
+        font-size: 48px;
         font-family: "Lucida Handwriting", "Segoe Script", cursive;
         font-weight: normal;
-        color: #92400e;
+        color: #8f0303;
       }
 
       .header-right {
@@ -49,17 +49,22 @@
         gap: 10px;
       }
 
-      .header-right button {
-        padding: 8px 14px;
-        border: 1px solid #b45309;
-        border-radius: 6px;
+      .header-right-side-icon {
+        border: none;
         background-color: white;
-        color: #b45309;
+        padding: 8px;
+        border-radius: 50%;
         cursor: pointer;
       }
 
+      .header-right-side-icon img {
+        width: 24px;
+        height: 24px;
+        display: block;
+      }
+
       .logo {
-        width: 120px;
+        width: 140px;
         height: auto;
       }
     </style>
@@ -77,9 +82,15 @@
         <h1>Welcome to Recipe Assistant</h1>
       </div>
       <div class="header-right">
-        <button>Facebook</button>
-        <button>Instagram</button>
-        <button>Twitter</button>
+        <button class="header-right-side-icon">
+          <img src="assets/images/facebook.png" alt="Facebook" />
+        </button>
+        <button class="header-right-side-icon">
+          <img src="assets/images/instagram.png" alt="Instagram" />
+        </button>
+        <button class="header-right-side-icon">
+          <img src="assets/images/twitter.png" alt="Twitter" />
+        </button>
       </div>
     </header>
     <main>
