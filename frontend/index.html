@@ -111,6 +111,61 @@
         width: 140px;
         height: auto;
       }
+      .upload-section {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .upload-section h2 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .upload-intro {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 30px;
+      }
+
+      .upload-box {
+        background-color: white;
+        border: 2px dashed #b45309;
+        border-radius: 16px;
+        padding: 40px 20px;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .upload-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #7c2d12;
+        margin-bottom: 8px;
+      }
+
+      .upload-note {
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .upload-box input {
+        cursor: pointer;
+      }
+
+      .analyze-button {
+        margin-top: 24px;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 8px;
+        background-color: #b45309;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .analyze-button:hover {
+        background-color: #92400e;
+      }
     </style>
   </head>
   <body>
@@ -171,6 +226,21 @@
             </p>
           </article>
         </div>
+      </section>
+      <section class="upload-section">
+        <h2>Try It Now</h2>
+        <p class="upload-intro">
+          Upload a dish image and let Recipe Assistant guide you.
+        </p>
+
+        <div class="upload-box">
+          <p class="upload-title">Upload your dish image here</p>
+          <p class="upload-note">PNG, JPG, or JPEG supported</p>
+
+          <input type="file" accept="image/*" />
+        </div>
+
+        <button class="analyze-button">Analyze Dish</button>
       </section>
     </main>
     <footer>
