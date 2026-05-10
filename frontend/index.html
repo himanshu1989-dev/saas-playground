@@ -62,7 +62,8 @@
 
       .header-center span {
         color: #ea580c;
-        font-family: "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
+        font-family:
+          "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
         font-style: italic;
         font-weight: bold;
       }
@@ -426,6 +427,12 @@
           width: 100%;
         }
       }
+      .step-icon-img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        margin-bottom: 18px;
+      }
     </style>
   </head>
 
@@ -466,7 +473,7 @@
         <div class="steps-container">
           <article class="step-card">
             <div class="step-number">1</div>
-            <div class="step-icon">☁</div>
+            <div class="step-icon">☁↑</div>
             <h3>Upload Image</h3>
             <p>
               Upload a photo of the dish you want to identify or learn about.
@@ -487,7 +494,11 @@
 
           <article class="step-card">
             <div class="step-number">3</div>
-            <div class="step-icon">☑</div>
+            <img
+              class="step-icon-img"
+              src="assets/images/recipe-checklist.png"
+              alt="Checklist icon"
+            />
             <h3>Get Recipes & Videos</h3>
             <p>
               Receive recipe ideas, cooking videos, and guidance on how to enjoy
