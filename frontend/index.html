@@ -619,10 +619,22 @@
       <p>2026 Recipe Assistant. All rights reserved.</p>
     </footer>
     <script>
-      function testBackend() {
+      async function testBackend() {
         const resultSection = document.getElementById("resultsSection");
         resultSection.style.display = "block";
-        resultSection.textContent = "Testing backend connection...";
+        resultSection.textContent = "Calling backend...";
+
+        const url = "http://64.236.242.59:3333/";
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            console.log(`Error status: ${response.status}`);
+          }
+          const data = await response.text();
+          resultSection.textContent = data;
+        } catch (error) {
+          console.error("Fetch Error:", error);
+        }
       }
     </script>
   </body>
