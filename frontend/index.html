@@ -297,6 +297,23 @@
         background: #c2410c;
       }
 
+      .test-backend-button {
+        margin-top: 24px;
+        padding: 16px 42px;
+        border: none;
+        border-radius: 12px;
+        background: #ea580c;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(234, 88, 12, 0.28);
+      }
+
+      .test-backend-button:hover {
+        background: #c2410c;
+      }
+
       .features-strip {
         margin: 38px auto 0 auto;
         max-width: 1120px;
@@ -542,6 +559,7 @@
         </div>
 
         <button class="analyze-button">Analyze Dish</button>
+        <button onclick="testBackend()" class="test-backend-button">Test Backend</button>
       </section>
 
       <section class="features-strip">
@@ -582,5 +600,11 @@
     <footer>
       <p>2026 Recipe Assistant. All rights reserved.</p>
     </footer>
+    <script>
+      function testBackend()
+      {
+        alert("Testing backend connection...");
+      }
+    </script>
   </body>
 </html>
