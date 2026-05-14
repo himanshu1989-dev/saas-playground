@@ -314,6 +314,10 @@
         background: #c2410c;
       }
 
+      .results-section {
+        display: none;
+      }
+
       .features-strip {
         margin: 38px auto 0 auto;
         max-width: 1120px;
@@ -559,7 +563,10 @@
         </div>
 
         <button class="analyze-button">Analyze Dish</button>
-        <button onclick="testBackend()" class="test-backend-button">Test Backend</button>
+        <button id="testBackendButton" onclick="testBackend()" class="test-backend-button">Test Backend</button>
+      </section>
+      <section id="resultsSection" class="results-section">
+        <!-- Results will be displayed here after analysis -->
       </section>
 
       <section class="features-strip">
@@ -603,7 +610,9 @@
     <script>
       function testBackend()
       {
-        alert("Testing backend connection...");
+        const resultSection = document.getElementById("resultsSection");
+        resultSection.classList.remove("hidden");
+        resultSection.textContent = "Testing backend connection...";        
       }
     </script>
   </body>
