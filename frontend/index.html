@@ -628,12 +628,15 @@
         try {
           const response = await fetch(url);
           if (!response.ok) {
-            console.log(`Error status: ${response.status}`);
+            resultSection.textContent = `Backend error: ${response.status}`;
+            return;
           }
           const data = await response.text();
           resultSection.textContent = data;
         } catch (error) {
           console.error("Fetch Error:", error);
+          resultSection.textContent =
+            "Failed to call backend. Check browser console.";
         }
       }
     </script>
