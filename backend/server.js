@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
         message: "Recipe Assistant backend is running",
       }),
     );
-  } else if (req.method === "GET" && req.url === "/api/recipes") {
+  } else if (req.method === "GET" && req.url.includes("/api/recipes/")) {
     for (let i = 0; i < recipes.length; i++) {
       if (req.url.includes(recipes[i].dishId)) {
         res.statusCode = 200;
