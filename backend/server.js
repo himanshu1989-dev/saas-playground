@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
   res.statusCode = 404;
   res.end(
     JSON.stringify({
-      error: "Endpoint not found",
+      error: "Route not found",
     }),
   );
 }
