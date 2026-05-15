@@ -1,32 +1,14 @@
-const http = require("node:http");
-const recipes = require("./data/recipes.json");
+import http from "node:http";
+import { dishRoute } from "./routes/analyzeDishRoutes.js";
 
 const PORT = 3333;
+
 const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Access-Control-Allow-Origin", "*");
   console.log(`Received request: ${req.method} ${req.url}`);
 
-  if (req.method === "GET" && req.url == "/api/health") {
-    res.statusCode = 200;
-    res.end(
-      JSON.stringify({
-        status: "ok",
-        message: "Recipe Assistant backend is running",
-      }),
-    );
-  } else if (req.method === "GET" && req.url.includes("/api/recipes/")) {
-    for (let i = 0; i < recipes.length; i++) {
-      if (req.url.includes(recipes[i].dishId)) {
-        res.statusCode = 200;
-        const recipeResponse = {
-          ingredients: recipes[i].ingredients,
-          steps: recipes[i].steps,
-        };
-        res.end(JSON.stringify(recipeResponse));
-      }
-    }
-  } else {
+  if (!dishRoute(req, res)) {
     res.statusCode = 404;
     res.end(
       JSON.stringify({

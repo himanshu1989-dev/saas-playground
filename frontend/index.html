@@ -624,7 +624,7 @@
         resultSection.style.display = "block";
         resultSection.textContent = "Calling backend...";
 
-        const url = "http://64.236.242.59:3333/api/recipes/pasta";
+        const url = "http://64.236.242.59:3333/api/analyzeDish";
         try {
           const response = await fetch(url);
           const data = await response.text();
