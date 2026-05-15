@@ -19,9 +19,11 @@ const server = http.createServer((req, res) => {
     for (let i = 0; i < recipes.length; i++) {
       if (req.url.includes(recipes[i].dishId)) {
         res.statusCode = 200;
-        res.end(JSON.stringify(recipes[i].ingredients));
-        res.end(JSON.stringify(recipes[i].steps));
-        return;
+        const recipeResponse = {
+          ingredients: recipes[i].ingredients,
+          steps: recipes[i].steps,
+        };
+        res.end(JSON.stringify(recipeResponse));
       }
     }
   } else {
