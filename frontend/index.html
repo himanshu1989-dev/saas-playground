@@ -627,12 +627,11 @@
         const url = "http://64.236.242.59:3333/";
         try {
           const response = await fetch(url);
-          if (!response.ok) {
-            resultSection.textContent = `Backend error: ${response.status}`;
-            return;
-          }
           const data = await response.text();
           resultSection.textContent = data;
+          if (!response.ok) {
+            return;
+          }
         } catch (error) {
           console.error("Fetch Error:", error);
           resultSection.textContent =
