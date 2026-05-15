@@ -1,4 +1,4 @@
-import { analyzeDishController } from "../analyzeDishController/analyzeDishController.js";
+import { analyzeDishController } from "../controllers/analyzeDishController.js";
 export function dishRoute(req,res){
     if (req.method === "GET" && req.url === "/api/analyzeDish")
     {
