@@ -1,7 +1,7 @@
 import { detectDish } from "../services/dishDetectionService.js";
 import { findRecipeByDishId } from "../services/recipeService.js";
 
-function analyzeDishController(req, res) {
+export function analyzeDishController(req, res) {
     const dish = detectDish();
     const recipe = findRecipeByDishId(dish);
     if (recipe === undefined)
