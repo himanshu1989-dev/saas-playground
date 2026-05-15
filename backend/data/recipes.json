@@ -1,0 +1,46 @@
+[
+  {
+    "dishId": "pasta",
+    "dishName": "pasta",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta",
+      "2 large eggs",
+      "50g pecorino cheese",
+      "50g parmesan cheese",
+      "2 cloves of garlic",
+      "Salt and black pepper to taste"
+    ],
+    "steps": [
+      "1. Cook the spaghetti in a large pot of salted boiling water until al dente.",
+      "2. While the pasta is cooking, heat a pan over medium heat and add the pancetta. Cook until crispy.",
+      "3. In a bowl, beat the eggs and mix in the pecorino and parmesan cheese. Season with salt and black pepper.",
+      "4. Once the pasta is cooked, reserve some of the pasta water and then drain the pasta.",
+      "5. Add the hot pasta to the pan with pancetta and toss to combine.",
+      "6. Remove the pan from heat and quickly pour in the egg and cheese mixture, tossing vigorously to create a creamy sauce. If needed, add reserved pasta water to achieve desired consistency.",
+      "7. Serve immediately with extra cheese on top."
+    ]
+  },
+  {
+    "dishId": "fajita",
+    "dishName": "fajita",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta",
+      "2 large eggs",
+      "50g pecorino cheese",
+      "50g parmesan cheese",
+      "2 cloves of garlic",
+      "Salt and black pepper to taste"
+    ],
+    "steps": [
+      "1. Cook the spaghetti in a large pot of salted boiling water until al dente.",
+      "2. While the pasta is cooking, heat a pan over medium heat and add the pancetta. Cook until crispy.",
+      "3. In a bowl, beat the eggs and mix in the pecorino and parmesan cheese. Season with salt and black pepper.",
+      "4. Once the pasta is cooked, reserve some of the pasta water and then drain the pasta.",
+      "5. Add the hot pasta to the pan with pancetta and toss to combine.",
+      "6. Remove the pan from heat and quickly pour in the egg and cheese mixture, tossing vigorously to create a creamy sauce. If needed, add reserved pasta water to achieve desired consistency.",
+      "7. Serve immediately with extra cheese on top."
+    ]
+  }
+]
