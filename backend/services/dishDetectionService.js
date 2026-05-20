@@ -5,11 +5,11 @@ export async function detectDish() {
   console.log("Starting dish detection...");
   const openAi = new OpenAI();
 
-  const dishImagePath = "../uploads/dish.jpg";
+  const dishImagePath = "./uploads/dish.jpg";
   if (!fs.existsSync(dishImagePath)) {
     throw new Error("Dish image not found at path: " + dishImagePath);
   }
-
+  console.log("Dish image found at path:", dishImagePath);
   const base64Image = fs.readFileSync(dishImagePath, "base64");
 
   const prompt = `
@@ -62,6 +62,7 @@ Rules:
   });
 
   const detectedDish = JSON.parse(response.output_text);
+  console.log(output_text);
 
   if (
     !detectedDish ||
