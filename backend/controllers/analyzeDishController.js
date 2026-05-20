@@ -15,9 +15,8 @@ export function analyzeDishController(req, res) {
   const busboy = Busboy({
     headers: req.headers,
   });
-  
-  let fileSaved = false;
 
+  let fileSavePromise = null;
 
   busboy.on("file", (fieldName, file, fileInfo) => {
     console.log("Receiving file field:", fieldName);
@@ -29,19 +28,25 @@ export function analyzeDishController(req, res) {
       return;
     }
 
-    const writeStream = fs.createWriteStream(dishImagePath);
+    fileSavePromise = new Promise((resolve, reject) => {
+      const writeStream = fs.createWriteStream(dishImagePath);
 
-    file.pipe(writeStream);
+      file.pipe(writeStream);
 
-    writeStream.on("finish", () => {
-      fileSaved = true;
-      console.log("Image saved as:", dishImagePath);
+      writeStream.on("finish", () => {
+        console.log("Image saved as:", dishImagePath);
+        resolve();
+      });
+
+      writeStream.on("error", (error) => {
+        reject(error);
+      });
     });
   });
 
   busboy.on("finish", async () => {
     try {
-      if (!fileSaved) {
+      if (!fileSavePromise) {
         res.statusCode = 400;
         res.end(
           JSON.stringify({
@@ -50,6 +55,9 @@ export function analyzeDishController(req, res) {
         );
         return;
       }
+
+      // Wait until uploads/dish.jpg is actually written
+      await fileSavePromise;
 
       const dish = await detectDish();
 
