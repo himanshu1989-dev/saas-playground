@@ -1,5 +1,5 @@
 import http from "node:http";
-import { dishRoute } from "./routes/analyzeDishRoutes.js";
+import { dishRoute } from "./routes/dishRoutes.js";
 
 const PORT = 3333;
 

@@ -270,6 +270,7 @@
         background: white;
         font-weight: bold;
         cursor: pointer;
+        font-size: 16px;
       }
 
       .file-label:hover {
@@ -297,23 +298,6 @@
         background: #c2410c;
       }
 
-      .test-backend-button {
-        margin-top: 24px;
-        padding: 16px 42px;
-        border: none;
-        border-radius: 12px;
-        background: #ea580c;
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0 8px 18px rgba(234, 88, 12, 0.28);
-      }
-
-      .test-backend-button:hover {
-        background: #c2410c;
-      }
-
       .results-section {
         border: 1px solid #ccc;
         padding: 16px;
@@ -321,6 +305,7 @@
         border-radius: 8px;
         background-color: #f9f9f9;
         display: none;
+        white-space: pre-wrap;
       }
 
       .features-strip {
@@ -380,6 +365,20 @@
 
       footer p {
         margin: 0;
+      }
+
+      .step-icon-img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        margin-bottom: 18px;
+      }
+
+      .cloud-upload-icon-img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        margin-bottom: 18px;
       }
 
       @media (max-width: 900px) {
@@ -452,18 +451,6 @@
         .analyze-button {
           width: 100%;
         }
-      }
-      .step-icon-img {
-        width: 90px;
-        height: 90px;
-        object-fit: contain;
-        margin-bottom: 18px;
-      }
-      .cloud-upload-icon-img {
-        width: 90px;
-        height: 90px;
-        object-fit: contain;
-        margin-bottom: 18px;
       }
     </style>
   </head>
@@ -556,26 +543,33 @@
             <h3>Upload your dish image here</h3>
             <p>PNG, JPG, or JPEG supported</p>
 
-            <label class="file-label" for="dishImage"> Choose Image </label>
+            <button
+              class="file-label"
+              type="button"
+              onclick="openImageSelector()"
+            >
+              Upload Image
+            </button>
 
             <input
               class="file-input"
               id="dishImage"
               type="file"
               accept="image/*"
+              onchange="uploadSelectedDishImage()"
             />
           </div>
         </div>
 
-        <button class="analyze-button">Analyze Dish</button>
         <button
-          id="testBackendButton"
-          onclick="testBackend()"
-          class="test-backend-button"
+          id="analyzeButton"
+          onclick="analyzeUploadedDish()"
+          class="analyze-button"
         >
-          Test Backend
+          Analyze Dish
         </button>
       </section>
+
       <section id="resultsSection" class="results-section">
         <!-- Results will be displayed here after analysis -->
       </section>
@@ -618,36 +612,96 @@
     <footer>
       <p>2026 Recipe Assistant. All rights reserved.</p>
     </footer>
+
     <script>
-      async function testBackend() {
+      function openImageSelector() {
+        const fileInput = document.getElementById("dishImage");
+        fileInput.click();
+      }
+
+      function uploadSelectedDishImage() {
         const resultSection = document.getElementById("resultsSection");
         const fileInput = document.getElementById("dishImage");
+
         resultSection.style.display = "block";
 
         if (!fileInput.files || fileInput.files.length === 0) {
-          resultSection.textContent = "Please choose an image first.";
+          resultSection.textContent = "No image selected.";
           return;
         }
-        resultSection.textContent = "Uploading image and calling backend...";
 
         const formData = new FormData();
         formData.append("dishImage", fileInput.files[0]);
 
+        const url = "http://64.236.242.59:3333/api/uploadDish";
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("POST", url);
+
+        xhr.upload.onprogress = function (event) {
+          if (event.lengthComputable) {
+            const percentUploaded = Math.round(
+              (event.loaded / event.total) * 100,
+            );
+
+            resultSection.textContent = `Uploading image... ${percentUploaded}%`;
+          } else {
+            resultSection.textContent = "Uploading image...";
+          }
+        };
+
+        xhr.onload = function () {
+          try {
+            const data = JSON.parse(xhr.responseText);
+
+            if (xhr.status < 200 || xhr.status >= 300) {
+              resultSection.textContent = JSON.stringify(data, null, 2);
+              return;
+            }
+
+            resultSection.textContent =
+              "Upload completed. Click Analyze Dish to process the image.";
+          } catch (error) {
+            console.error("Upload response parse error:", error);
+            resultSection.textContent =
+              "Upload completed, but backend response was not valid JSON.";
+          }
+        };
+
+        xhr.onerror = function () {
+          resultSection.textContent =
+            "Failed to upload image. Check browser console.";
+        };
+
+        resultSection.textContent = "Starting upload...";
+        xhr.send(formData);
+      }
+
+      async function analyzeUploadedDish() {
+        const resultSection = document.getElementById("resultsSection");
+
+        resultSection.style.display = "block";
+        resultSection.textContent = "Analyzing uploaded image...";
+
         const url = "http://64.236.242.59:3333/api/analyzeDish";
+
         try {
           const response = await fetch(url, {
             method: "POST",
-            body: formData,
           });
-          const data = await response.text();
-          resultSection.textContent = data;
+
+          const data = await response.json();
+
           if (!response.ok) {
+            resultSection.textContent = JSON.stringify(data, null, 2);
             return;
           }
+
+          resultSection.textContent = JSON.stringify(data, null, 2);
         } catch (error) {
-          console.error("Fetch Error:", error);
+          console.error("Analyze Error:", error);
           resultSection.textContent =
-            "Failed to call backend. Check browser console.";
+            "Failed to analyze image. Check browser console.";
         }
       }
     </script>

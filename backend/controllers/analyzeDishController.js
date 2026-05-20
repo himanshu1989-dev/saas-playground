@@ -1,109 +1,77 @@
 import fs from "node:fs";
-import path from "node:path";
-import Busboy from "busboy";
+
 import { detectDish } from "../services/dishDetectionService.js";
 import { findRecipeByDishId } from "../services/recipeService.js";
 
-export function analyzeDishController(req, res) {
-  const uploadDirectory = "./uploads";
-  const dishImagePath = path.join(uploadDirectory, "dish.jpg");
-
-  if (!fs.existsSync(uploadDirectory)) {
-    fs.mkdirSync(uploadDirectory);
-  }
-
-  const busboy = Busboy({
-    headers: req.headers,
-  });
-
-  let fileSavePromise = null;
-
-  busboy.on("file", (fieldName, file, fileInfo) => {
-    console.log("Receiving file field:", fieldName);
-    console.log("Original filename:", fileInfo.filename);
-    console.log("MIME type:", fileInfo.mimeType);
-
-    if (fieldName !== "dishImage") {
-      file.resume();
+function deleteTemporaryDishImage(dishImagePath) {
+  fs.unlink(dishImagePath, (error) => {
+    if (error) {
+      console.error("Failed to delete temporary dish image:", error);
       return;
     }
 
-    fileSavePromise = new Promise((resolve, reject) => {
-      const writeStream = fs.createWriteStream(dishImagePath);
-
-      file.pipe(writeStream);
-
-      writeStream.on("finish", () => {
-        console.log("Image saved as:", dishImagePath);
-        resolve();
-      });
-
-      writeStream.on("error", (error) => {
-        reject(error);
-      });
-    });
+    console.log("Temporary dish image deleted:", dishImagePath);
   });
+}
 
-  busboy.on("finish", async () => {
-    try {
-      if (!fileSavePromise) {
-        res.statusCode = 400;
-        res.end(
-          JSON.stringify({
-            error: "No image uploaded",
-          }),
-        );
-        return;
-      }
+export async function analyzeDishController(req, res) {
+  const dishImagePath = "./uploads/dish.jpg";
 
-      // Wait until uploads/dish.jpg is actually written
-      await fileSavePromise;
-
-      const dish = await detectDish();
-      console.log("Detected dish:", dish);
-
-      const recipe = findRecipeByDishId(dish);
-
-      if (recipe === undefined) {
-        res.statusCode = 404;
-        res.end(
-          JSON.stringify({
-            error: "Dish not found",
-          }),
-        );
-        return;
-      }
-
-      const response = {
-        dish: dish,
-        ingredients: recipe.ingredients,
-        steps: recipe.steps,
-      };
-
-      res.statusCode = 200;
-      res.end(JSON.stringify(response));
-    } catch (error) {
-      console.error("Analyze dish error:", error);
-
-      res.statusCode = 500;
+  try {
+    if (!fs.existsSync(dishImagePath)) {
+      res.statusCode = 400;
+      res.setHeader("Content-Type", "application/json");
       res.end(
         JSON.stringify({
-          error: "Failed to analyze dish",
+          error: "No uploaded dish image found. Please upload an image first.",
         }),
       );
+      return;
     }
-  });
 
-  busboy.on("error", (error) => {
-    console.error("Upload error:", error);
+    const dish = await detectDish();
+
+    const recipe = findRecipeByDishId(dish);
+
+    if (recipe === undefined) {
+      res.statusCode = 404;
+      res.setHeader("Content-Type", "application/json");
+      res.end(
+        JSON.stringify({
+          error: "Dish not found",
+        }),
+        () => {
+          deleteTemporaryDishImage(dishImagePath);
+        },
+      );
+      return;
+    }
+
+    const response = {
+      dish: dish,
+      ingredients: recipe.ingredients,
+      steps: recipe.steps,
+    };
+
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify(response), () => {
+      deleteTemporaryDishImage(dishImagePath);
+    });
+  } catch (error) {
+    console.error("Analyze dish error:", error);
 
     res.statusCode = 500;
+    res.setHeader("Content-Type", "application/json");
     res.end(
       JSON.stringify({
-        error: "Image upload failed",
+        error: "Failed to analyze dish",
       }),
+      () => {
+        if (fs.existsSync(dishImagePath)) {
+          deleteTemporaryDishImage(dishImagePath);
+        }
+      },
     );
-  });
-
-  req.pipe(busboy);
+  }
 }
