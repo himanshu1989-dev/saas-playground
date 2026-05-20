@@ -15,6 +15,9 @@ export function analyzeDishController(req, res) {
   const busboy = Busboy({
     headers: req.headers,
   });
+  
+  let fileSaved = false;
+
 
   busboy.on("file", (fieldName, file, fileInfo) => {
     console.log("Receiving file field:", fieldName);
@@ -35,8 +38,6 @@ export function analyzeDishController(req, res) {
       console.log("Image saved as:", dishImagePath);
     });
   });
-
-  let fileSaved = false;
 
   busboy.on("finish", async () => {
     try {
