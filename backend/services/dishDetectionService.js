@@ -2,9 +2,10 @@ import fs from "node:fs";
 import OpenAI from "openai";
 
 export async function detectDish() {
+  console.log("Starting dish detection...");
   const openAi = new OpenAI();
 
-  const dishImagePath = "./uploads/dish.jpg";
+  const dishImagePath = "../uploads/dish.jpg";
   if (!fs.existsSync(dishImagePath)) {
     throw new Error("Dish image not found at path: " + dishImagePath);
   }
