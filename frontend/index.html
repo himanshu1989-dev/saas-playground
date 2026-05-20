@@ -621,12 +621,24 @@
     <script>
       async function testBackend() {
         const resultSection = document.getElementById("resultsSection");
+        const fileInput = document.getElementById("dishImage");
         resultSection.style.display = "block";
-        resultSection.textContent = "Calling backend...";
+
+        if (!fileInput.files || fileInput.files.length === 0) {
+          resultSection.textContent = "Please choose an image first.";
+          return;
+        }
+        resultSection.textContent = "Uploading image and calling backend...";
+
+        const formData = new FormData();
+        formData.append("dishImage", fileInput.files[0]);
 
         const url = "http://64.236.242.59:3333/api/analyzeDish";
         try {
-          const response = await fetch(url);
+          const response = await fetch(url, {
+            method: "POST",
+            body: formData,
+          });
           const data = await response.text();
           resultSection.textContent = data;
           if (!response.ok) {
