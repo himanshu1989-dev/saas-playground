@@ -72,6 +72,7 @@ Rules:
   ) {
     return "Unknown dish";
   }
+  console.log(detectedDish.dishes[0].dishName);
 
   return detectedDish.dishes[0].dishName;
 }

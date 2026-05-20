@@ -60,6 +60,7 @@ export function analyzeDishController(req, res) {
       await fileSavePromise;
 
       const dish = await detectDish();
+      console.log("Detected dish:", dish);
 
       const recipe = findRecipeByDishId(dish);
 
