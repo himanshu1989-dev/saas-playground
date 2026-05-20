@@ -281,6 +281,25 @@
         display: none;
       }
 
+      .upload-status {
+        margin-top: 14px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #5f5148;
+      }
+
+      .upload-status.uploading {
+        color: #ea580c;
+      }
+
+      .upload-status.completed {
+        color: #15803d;
+      }
+
+      .upload-status.error {
+        color: #b91c1c;
+      }
+
       .analyze-button {
         margin-top: 24px;
         padding: 16px 42px;
@@ -558,6 +577,10 @@
               accept="image/*"
               onchange="uploadSelectedDishImage()"
             />
+
+            <div id="uploadStatus" class="upload-status">
+              No image uploaded
+            </div>
           </div>
         </div>
 
@@ -616,9 +639,13 @@
     <script>
       function openImageSelector() {
         const fileInput = document.getElementById("dishImage");
+        const uploadStatus = document.getElementById("uploadStatus");
 
         // Reset input so selecting the same file again still triggers onchange
         fileInput.value = "";
+
+        uploadStatus.textContent = "Select an image to upload";
+        uploadStatus.className = "upload-status";
 
         fileInput.click();
       }
@@ -626,10 +653,13 @@
       function uploadSelectedDishImage() {
         const resultSection = document.getElementById("resultsSection");
         const fileInput = document.getElementById("dishImage");
+        const uploadStatus = document.getElementById("uploadStatus");
 
         resultSection.style.display = "block";
 
         if (!fileInput.files || fileInput.files.length === 0) {
+          uploadStatus.textContent = "No image selected.";
+          uploadStatus.className = "upload-status error";
           resultSection.textContent = "No image selected.";
           return;
         }
@@ -642,14 +672,20 @@
 
         xhr.open("POST", url);
 
+        uploadStatus.textContent = "Uploading image...";
+        uploadStatus.className = "upload-status uploading";
+        resultSection.textContent = "Uploading image...";
+
         xhr.upload.onprogress = function (event) {
           if (event.lengthComputable) {
             const percentUploaded = Math.round(
               (event.loaded / event.total) * 100,
             );
 
+            uploadStatus.textContent = `Uploading image... ${percentUploaded}%`;
             resultSection.textContent = `Uploading image... ${percentUploaded}%`;
           } else {
+            uploadStatus.textContent = "Uploading image...";
             resultSection.textContent = "Uploading image...";
           }
         };
@@ -659,9 +695,14 @@
             const data = JSON.parse(xhr.responseText);
 
             if (xhr.status < 200 || xhr.status >= 300) {
+              uploadStatus.textContent = "Upload failed.";
+              uploadStatus.className = "upload-status error";
               resultSection.textContent = JSON.stringify(data, null, 2);
               return;
             }
+
+            uploadStatus.textContent = "Upload completed ✓";
+            uploadStatus.className = "upload-status completed";
 
             resultSection.textContent =
               "Upload completed. Click Analyze Dish to process the image.";
@@ -670,17 +711,23 @@
             fileInput.value = "";
           } catch (error) {
             console.error("Upload response parse error:", error);
+
+            uploadStatus.textContent = "Upload completed, but response was invalid.";
+            uploadStatus.className = "upload-status error";
+
             resultSection.textContent =
               "Upload completed, but backend response was not valid JSON.";
           }
         };
 
         xhr.onerror = function () {
+          uploadStatus.textContent = "Upload failed.";
+          uploadStatus.className = "upload-status error";
+
           resultSection.textContent =
             "Failed to upload image. Check browser console.";
         };
 
-        resultSection.textContent = "Starting upload...";
         xhr.send(formData);
       }
 
