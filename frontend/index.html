@@ -616,6 +616,10 @@
     <script>
       function openImageSelector() {
         const fileInput = document.getElementById("dishImage");
+
+        // Reset input so selecting the same file again still triggers onchange
+        fileInput.value = "";
+
         fileInput.click();
       }
 
@@ -661,6 +665,9 @@
 
             resultSection.textContent =
               "Upload completed. Click Analyze Dish to process the image.";
+
+            // Allow same file to be uploaded again later
+            fileInput.value = "";
           } catch (error) {
             console.error("Upload response parse error:", error);
             resultSection.textContent =
