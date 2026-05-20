@@ -62,7 +62,7 @@ Rules:
   });
 
   const detectedDish = JSON.parse(response.output_text);
-  console.log(output_text);
+  console.log(response.output_text);
 
   if (
     !detectedDish ||
