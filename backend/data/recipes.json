@@ -1,158 +1,457 @@
 [
   {
-    "dishName": "Pasta",
-    "ingredients": [
-      "200g spaghetti",
-      "100g pancetta",
-      "2 large eggs",
-      "50g pecorino cheese",
-      "50g parmesan cheese",
-      "2 cloves of garlic",
-      "Salt and black pepper to taste"
+    "dishId": "paneer-butter-masala",
+    "dishName": "Paneer Butter Masala",
+    "aliases": [
+      "Paneer Makhani",
+      "Butter Paneer",
+      "Paneer Butter Curry",
+      "Paneer Butter Masala Curry"
     ],
+
+    "classification": {
+      "cuisine": "North Indian",
+      "countryOfOrigin": "India",
+      "regionOfOrigin": "Delhi / Punjab region",
+      "popularRegions": [
+        "India",
+        "United States",
+        "Canada",
+        "United Kingdom",
+        "Australia",
+        "Middle East"
+      ],
+      "dietCategory": "vegetarian",
+      "isVegan": false,
+      "isVegetarian": true,
+      "isNonVegetarian": false,
+      "spiceLevel": "medium"
+    },
+
+    "aboutDish": "Paneer Butter Masala is a rich North Indian curry made with paneer, tomato, butter, cream, and aromatic spices. It is believed to have originated around the Delhi and Punjab region, inspired by popular restaurant-style tomato-butter gravies. Today, it is widely eaten across India and in Indian restaurants around the world as a popular vegetarian dish.",
+
+    "dishHistory": {
+      "originStory": "Paneer Butter Masala is believed to have developed from North Indian restaurant-style tomato-butter gravies, especially around Delhi and Punjab.",
+      "culturalContext": "It became popular as a rich vegetarian alternative to butter chicken-style gravies.",
+      "traditionalOccasions": [
+        "Restaurant meals",
+        "Family dinners",
+        "Festive vegetarian meals"
+      ]
+    },
+
+    "recognition": {
+      "isMichelinRecognized": false,
+      "michelinNotes": "Michelin stars are awarded to restaurants, not individual dishes. This dish may be served by notable or Michelin-recognized Indian restaurants.",
+      "famousRestaurants": []
+    },
+
+    "ingredients": {
+      "paneer": {
+        "displayName": "Paneer",
+        "quantity": 200,
+        "unit": "g",
+        "category": "Dairy",
+        "optional": false,
+        "allergens": ["milk", "dairy"],
+        "buySearchTerm": "paneer cheese",
+        "buyLinks": [
+          {
+            "country": "US",
+            "store": "Walmart",
+            "url": ""
+          },
+          {
+            "country": "US",
+            "store": "Amazon Fresh",
+            "url": ""
+          }
+        ],
+        "nutrition": {
+          "calories": {
+            "value": 530,
+            "unit": "kcal"
+          },
+          "protein": {
+            "value": 36,
+            "unit": "g"
+          },
+          "carbohydrates": {
+            "value": 6,
+            "unit": "g"
+          },
+          "fat": {
+            "value": 42,
+            "unit": "g"
+          },
+          "fiber": {
+            "value": 0,
+            "unit": "g"
+          },
+          "calcium": {
+            "value": 960,
+            "unit": "mg"
+          }
+        }
+      },
+
+      "tomatoes": {
+        "displayName": "Tomatoes",
+        "quantity": 2,
+        "unit": "medium",
+        "category": "Vegetable",
+        "optional": false,
+        "allergens": [],
+        "buySearchTerm": "fresh tomatoes",
+        "buyLinks": [],
+        "nutrition": {
+          "calories": {
+            "value": 44,
+            "unit": "kcal"
+          },
+          "protein": {
+            "value": 2,
+            "unit": "g"
+          },
+          "carbohydrates": {
+            "value": 10,
+            "unit": "g"
+          },
+          "fat": {
+            "value": 0.4,
+            "unit": "g"
+          },
+          "fiber": {
+            "value": 3,
+            "unit": "g"
+          }
+        }
+      },
+
+      "onion": {
+        "displayName": "Onion",
+        "quantity": 1,
+        "unit": "medium",
+        "category": "Vegetable",
+        "optional": false,
+        "allergens": [],
+        "buySearchTerm": "yellow onion",
+        "buyLinks": [],
+        "nutrition": {
+          "calories": {
+            "value": 44,
+            "unit": "kcal"
+          },
+          "protein": {
+            "value": 1.2,
+            "unit": "g"
+          },
+          "carbohydrates": {
+            "value": 10,
+            "unit": "g"
+          },
+          "fat": {
+            "value": 0.1,
+            "unit": "g"
+          },
+          "fiber": {
+            "value": 1.9,
+            "unit": "g"
+          }
+        }
+      },
+
+      "butter": {
+        "displayName": "Butter",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Dairy",
+        "optional": false,
+        "allergens": ["milk", "dairy"],
+        "buySearchTerm": "unsalted butter",
+        "buyLinks": [],
+        "nutrition": {
+          "calories": {
+            "value": 204,
+            "unit": "kcal"
+          },
+          "protein": {
+            "value": 0.2,
+            "unit": "g"
+          },
+          "carbohydrates": {
+            "value": 0,
+            "unit": "g"
+          },
+          "fat": {
+            "value": 23,
+            "unit": "g"
+          },
+          "fiber": {
+            "value": 0,
+            "unit": "g"
+          }
+        }
+      },
+
+      "cream": {
+        "displayName": "Cream",
+        "quantity": 0.5,
+        "unit": "cup",
+        "category": "Dairy",
+        "optional": false,
+        "allergens": ["milk", "dairy"],
+        "buySearchTerm": "heavy cream",
+        "buyLinks": [],
+        "nutrition": {
+          "calories": {
+            "value": 400,
+            "unit": "kcal"
+          },
+          "protein": {
+            "value": 3,
+            "unit": "g"
+          },
+          "carbohydrates": {
+            "value": 3,
+            "unit": "g"
+          },
+          "fat": {
+            "value": 43,
+            "unit": "g"
+          },
+          "fiber": {
+            "value": 0,
+            "unit": "g"
+          }
+        }
+      },
+
+      "gingerGarlicPaste": {
+        "displayName": "Ginger-garlic paste",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spice / Aromatic",
+        "optional": false,
+        "allergens": [],
+        "buySearchTerm": "ginger garlic paste",
+        "buyLinks": [],
+        "nutrition": {
+          "calories": {
+            "value": 5,
+            "unit": "kcal"
+          }
+        }
+      },
+
+      "turmericPowder": {
+        "displayName": "Turmeric powder",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "category": "Spice",
+        "optional": false,
+        "allergens": [],
+        "buySearchTerm": "turmeric powder",
+        "buyLinks": [],
+        "nutrition": {
+          "calories": {
+            "value": 4,
+            "unit": "kcal"
+          }
+        }
+      },
+
+      "redChiliPowder": {
+        "displayName": "Red chili powder",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spice",
+        "optional": false,
+        "allergens": [],
+        "buySearchTerm": "red chili powder",
+        "buyLinks": [],
+        "nutrition": {
+          "calories": {
+            "value": 6,
+            "unit": "kcal"
+          }
+        }
+      },
+
+      "garamMasala": {
+        "displayName": "Garam masala",
+        "quantity": 1,
+        "unit": "tsp",
+        "category": "Spice",
+        "optional": false,
+        "allergens": [],
+        "buySearchTerm": "garam masala",
+        "buyLinks": [],
+        "nutrition": {
+          "calories": {
+            "value": 7,
+            "unit": "kcal"
+          }
+        }
+      },
+
+      "cashewPaste": {
+        "displayName": "Cashew paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "category": "Nut",
+        "optional": true,
+        "allergens": ["tree nuts"],
+        "buySearchTerm": "cashew paste",
+        "buyLinks": [],
+        "nutrition": {
+          "calories": {
+            "value": 95,
+            "unit": "kcal"
+          },
+          "protein": {
+            "value": 3,
+            "unit": "g"
+          },
+          "carbohydrates": {
+            "value": 5,
+            "unit": "g"
+          },
+          "fat": {
+            "value": 8,
+            "unit": "g"
+          }
+        }
+      }
+    },
+
+    "allergenSummary": {
+      "calculationBasis": "Derived from ingredient-level allergen data.",
+      "contains": ["milk", "dairy"],
+      "mayContain": ["tree nuts"],
+      "allergenWarning": "Contains dairy. May contain tree nuts depending on recipe variation. Always verify packaged ingredient labels before cooking."
+    },
+
+    "nutritionSummary": {
+      "calculationBasis": "Derived from ingredient-level nutrition values and divided by serving size.",
+      "servings": 3,
+      "perServing": {
+        "calories": {
+          "value": 430,
+          "unit": "kcal"
+        },
+        "protein": {
+          "value": 15,
+          "unit": "g"
+        },
+        "carbohydrates": {
+          "value": 12,
+          "unit": "g"
+        },
+        "fat": {
+          "value": 38,
+          "unit": "g"
+        },
+        "fiber": {
+          "value": 2,
+          "unit": "g"
+        },
+        "calcium": {
+          "value": 320,
+          "unit": "mg"
+        }
+      },
+      "sourceLinks": [
+        {
+          "country": "US",
+          "source": "USDA FoodData Central",
+          "url": ""
+        },
+        {
+          "country": "US",
+          "source": "FDA Nutrition Information",
+          "url": ""
+        },
+        {
+          "country": "India",
+          "source": "FSSAI",
+          "url": ""
+        }
+      ],
+      "disclaimer": "Nutrition values are estimates based on ingredients, quantities, and serving size. Actual values may vary based on brands, preparation method, and portion size."
+    },
+
     "steps": [
-      "1. Cook the spaghetti in a large pot of salted boiling water until al dente.",
-      "2. While the pasta is cooking, heat a pan over medium heat and add the pancetta. Cook until crispy.",
-      "3. In a bowl, beat the eggs and mix in the pecorino and parmesan cheese. Season with salt and black pepper.",
-      "4. Once the pasta is cooked, reserve some of the pasta water and then drain the pasta.",
-      "5. Add the hot pasta to the pan with pancetta and toss to combine.",
-      "6. Remove the pan from heat and quickly pour in the egg and cheese mixture, tossing vigorously to create a creamy sauce.",
-      "7. Serve immediately with extra cheese on top."
-    ]
-  },
-  {
-    "dishName": "Fajita",
-    "ingredients": [
-      "2 tortillas",
-      "1 bell pepper",
-      "1 onion",
-      "200g chicken or paneer",
-      "1 tbsp oil",
-      "1 tsp cumin powder",
-      "1 tsp paprika",
-      "Salt and pepper to taste",
-      "Lemon juice"
+      {
+        "stepNumber": 1,
+        "instruction": "Heat butter and oil in a pan over medium heat.",
+        "imageUrl": ""
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Add chopped onion and cook until soft and light golden.",
+        "imageUrl": ""
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Add ginger-garlic paste and sauté for one minute.",
+        "imageUrl": ""
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Add tomato puree, turmeric, red chili powder, and salt.",
+        "imageUrl": ""
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Cook until the tomato mixture thickens and oil starts separating.",
+        "imageUrl": ""
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Add cream or milk and mix well to create a smooth gravy.",
+        "imageUrl": ""
+      },
+      {
+        "stepNumber": 7,
+        "instruction": "Add paneer cubes and simmer for 4-5 minutes.",
+        "imageUrl": ""
+      },
+      {
+        "stepNumber": 8,
+        "instruction": "Add garam masala and mix gently.",
+        "imageUrl": ""
+      },
+      {
+        "stepNumber": 9,
+        "instruction": "Garnish with fresh coriander and serve hot with naan, roti, or rice.",
+        "imageUrl": ""
+      }
     ],
-    "steps": [
-      "1. Slice the bell pepper, onion, and chicken or paneer.",
-      "2. Heat oil in a pan over medium heat.",
-      "3. Add chicken or paneer and cook until done.",
-      "4. Add bell pepper, onion, cumin, paprika, salt, and pepper.",
-      "5. Cook until vegetables are slightly soft.",
-      "6. Add lemon juice and mix well.",
-      "7. Serve inside warm tortillas."
-    ]
-  },
-  {
-    "dishName": "Matar Paneer",
-    "ingredients": [
-      "200g paneer cubes",
-      "2 tomatoes",
-      "1 onion",
-      "2 tbsp butter",
-      "1 tbsp cream",
-      "1 tsp ginger-garlic paste",
-      "1 tsp garam masala",
-      "1 tsp red chili powder",
-      "Salt to taste"
-    ],
-    "steps": [
-      "1. Heat butter in a pan and sauté onions until soft.",
-      "2. Add ginger-garlic paste and cook for one minute.",
-      "3. Add tomatoes, red chili powder, garam masala, and salt.",
-      "4. Cook until tomatoes become soft.",
-      "5. Blend the mixture into a smooth gravy.",
-      "6. Add paneer cubes and simmer for a few minutes.",
-      "7. Add cream and serve hot with roti or naan."
-    ]
-  },
-  {
-    "dishName": "Chole",
-    "ingredients": [
-      "1 cup boiled chickpeas",
-      "1 onion",
-      "2 tomatoes",
-      "1 tsp ginger-garlic paste",
-      "1 tsp cumin seeds",
-      "1 tsp chole masala",
-      "1 tsp red chili powder",
-      "1 tbsp oil",
-      "Salt to taste"
-    ],
-    "steps": [
-      "1. Heat oil in a pan and add cumin seeds.",
-      "2. Add chopped onions and cook until golden.",
-      "3. Add ginger-garlic paste and cook for one minute.",
-      "4. Add tomatoes, chole masala, red chili powder, and salt.",
-      "5. Cook until the masala releases oil.",
-      "6. Add boiled chickpeas and some water.",
-      "7. Simmer for 10 to 15 minutes and serve with bhature, puri, or rice."
-    ]
-  },
-  {
-    "dishName": "Idli",
-    "ingredients": [
-      "2 cups idli batter",
-      "Oil for greasing",
-      "Water for steaming",
-      "Coconut chutney for serving",
-      "Sambar for serving"
-    ],
-    "steps": [
-      "1. Grease the idli molds with oil.",
-      "2. Pour idli batter into each mold.",
-      "3. Heat water in an idli steamer.",
-      "4. Place the molds inside the steamer.",
-      "5. Steam for 10 to 12 minutes.",
-      "6. Remove the idlis once cooked.",
-      "7. Serve hot with coconut chutney and sambar."
-    ]
-  },
-  {
-    "dishName": "Masala Dosa",
-    "ingredients": [
-      "2 cups dosa batter",
-      "2 boiled potatoes",
-      "1 onion",
-      "1 green chili",
-      "1 tsp mustard seeds",
-      "Few curry leaves",
-      "1/2 tsp turmeric powder",
-      "1 tbsp oil",
-      "Salt to taste"
-    ],
-    "steps": [
-      "1. Heat oil in a pan and add mustard seeds.",
-      "2. Add curry leaves, green chili, and onions.",
-      "3. Cook until onions become soft.",
-      "4. Add turmeric, salt, and mashed boiled potatoes.",
-      "5. Mix well to make the potato filling.",
-      "6. Spread dosa batter on a hot tawa and cook until crisp.",
-      "7. Add potato filling, fold the dosa, and serve with chutney and sambar."
-    ]
-  },
-  {
-    "dishName": "Biryani",
-    "ingredients": [
-      "1 cup basmati rice",
-      "200g chicken, paneer, or mixed vegetables",
-      "1 onion",
-      "1 tomato",
-      "1/2 cup yogurt",
-      "1 tsp ginger-garlic paste",
-      "1 tsp biryani masala",
-      "Few mint leaves",
-      "Few coriander leaves",
-      "Salt to taste"
-    ],
-    "steps": [
-      "1. Wash and soak basmati rice for 20 minutes.",
-      "2. Cook rice until it is about 70% done.",
-      "3. In a pan, cook onions, ginger-garlic paste, tomato, yogurt, and biryani masala.",
-      "4. Add chicken, paneer, or vegetables and cook until tender.",
-      "5. Layer the cooked rice over the masala.",
-      "6. Add mint and coriander leaves.",
-      "7. Cover and cook on low heat for 15 minutes before serving."
+
+    "videoUrl": "",
+
+    "similarDishes": [
+      {
+        "dishName": "Paneer Tikka Masala",
+        "imageUrl": "",
+        "relationship": "Similar paneer-based curry"
+      },
+      {
+        "dishName": "Shahi Paneer",
+        "imageUrl": "",
+        "relationship": "Rich North Indian paneer curry"
+      },
+      {
+        "dishName": "Kadai Paneer",
+        "imageUrl": "",
+        "relationship": "Popular paneer dish with spiced gravy"
+      },
+      {
+        "dishName": "Butter Chicken",
+        "imageUrl": "",
+        "relationship": "Similar tomato-butter gravy, non-vegetarian"
+      }
     ]
   }
 ]

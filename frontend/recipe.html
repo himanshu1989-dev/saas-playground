@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <title>Recipe Page</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #fff7ed;
+        color: #3f1f0f;
+        line-height: 1.6;
+      }
+
+      /* Header - consistent with main page */
+      header {
+        background: #fffaf3;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        padding: 14px 48px;
+        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.12);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .header-left {
+        justify-self: start;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo,
+      .header-left img {
+        width: 70px;
+        height: auto;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .brand-name {
+        margin: 0;
+        font-size: 30px;
+        font-family:
+          "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
+        font-style: italic;
+        font-weight: normal;
+        color: #ea580c;
+      }
+
+      .header-right {
+        grid-column: 3;
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .home-button,
+      .facebook-button,
+      .youtube-button,
+      .instagram-button {
+        padding: 10px 20px;
+        border: 2px solid #ea580c;
+        border-radius: 12px;
+        background: white;
+        color: #3f1f0f;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .home-button:hover,
+      .facebook-button:hover,
+      .youtube-button:hover,
+      .instagram-button:hover {
+        background: #ffedd5;
+      }
+
+      /* Page layout */
+      main {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 48px 32px 60px 32px;
+      }
+
+      /* Headings */
+      h2 {
+        margin: 0 0 18px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 32px;
+        font-weight: normal;
+        color: #7c2d12;
+      }
+
+      /* About dish - hero/intro style */
+      .about-dish-section {
+        max-width: 760px;
+        margin: 0 auto 56px auto;
+        padding: 36px 48px;
+        background: #fffaf3;
+        border-left: 6px solid #ea580c;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 8px 24px rgba(124, 45, 18, 0.12);
+      }
+
+      .about-dish-section h2 {
+        display: none;
+      }
+
+      .about-dish-section p {
+        margin: 0;
+        font-size: 18px;
+        color: #5b3a29;
+      }
+
+      /* Ingredients + nutrition */
+      .ingredient-nutrition-sidebyside {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 48px;
+        align-items: start;
+        margin-bottom: 64px;
+      }
+
+      .ingredients-section {
+        padding-right: 40px;
+        border-right: 1px solid #f3c89b;
+      }
+
+      .nutition-value-section {
+        background: #fffaf3;
+        padding: 28px;
+        border-radius: 18px;
+        box-shadow: 0 6px 18px rgba(124, 45, 18, 0.1);
+      }
+
+      ul,
+      ol {
+        padding-left: 22px;
+        margin-bottom: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      /* Recipe area */
+      .recipe-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 56px;
+        align-items: start;
+        margin-bottom: 64px;
+      }
+
+      /* Recipe steps - article/timeline style */
+      .recipe-section ol {
+        list-style: none;
+        counter-reset: recipe-step;
+        padding-left: 0;
+      }
+
+      .recipe-section li {
+        counter-increment: recipe-step;
+        display: grid;
+        grid-template-columns: 82px 1fr;
+        gap: 22px;
+        padding: 22px 0;
+        border-top: 1px solid #f3c89b;
+        margin-bottom: 0;
+      }
+
+      .recipe-section li::before {
+        content: "#" counter(recipe-step, decimal-leading-zero);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 32px;
+        color: #ea580c;
+      }
+
+      /* Right side widgets */
+      .recipe-side-section {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .recipe-video-section,
+      .socialmedia-feedback-section,
+      .recipe-assistance-section {
+        background: #fffaf3;
+        padding: 24px;
+        border-radius: 18px;
+        box-shadow: 0 6px 18px rgba(124, 45, 18, 0.1);
+      }
+
+      .recipe-video-section h2,
+      .socialmedia-feedback-section h2,
+      .recipe-assistance-section h2 {
+        font-size: 22px;
+      }
+
+      /* Similar dishes */
+      .similar-dishes-section {
+        padding-top: 32px;
+        border-top: 1px solid #f3c89b;
+      }
+
+      .similar-dishes-section h2 {
+        font-size: 36px;
+      }
+
+      footer {
+        background: #3f1f0f;
+        color: white;
+        text-align: center;
+        padding: 18px;
+      }
+      footer p {
+        margin: 0;
+      }
+
+      /* Mobile */
+      @media (max-width: 768px) {
+        header {
+          grid-template-columns: 1fr;
+          gap: 18px;
+          padding: 18px 24px;
+        }
+
+        .header-left,
+        .header-right {
+          justify-self: center;
+        }
+
+        .header-right {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        main {
+          padding: 36px 24px;
+        }
+
+        .ingredient-nutrition-sidebyside,
+        .recipe-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+
+        .ingredients-section {
+          border-right: none;
+          padding-right: 0;
+          border-bottom: 1px solid #f3c89b;
+          padding-bottom: 32px;
+        }
+
+        .recipe-section li {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .about-dish-section {
+          padding: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="./assets/images/logo.png" alt="logo" />
+        <h1 class="brand-name">Recipe Assistant</h1>
+      </div>
+      <div class="header-right">
+        <button class="home-button">Home</button>
+        <button class="facebook-button">Facebook</button>
+        <button class="youtube-button">Youtube</button>
+        <button class="instagram-button">Instagram</button>
+      </div>
+    </header>
+    <main>
+      <section class="about-dish-section">
+        <h2>About this Dish</h2>
+        <p>
+          Paneer Butter Masala is a rich North Indian curry made with paneer,
+          tomato, butter, cream, and aromatic spices. It is believed to have
+          originated around the Delhi and Punjab region, inspired by popular
+          restaurant-style tomato-butter gravies. Today, it is widely eaten
+          across India and in Indian restaurants around the world as a popular
+          vegetarian dish.
+        </p>
+      </section>
+      <div class="ingredient-nutrition-sidebyside">
+        <section class="ingredients-section">
+          <h2>INGREDIENTS</h2>
+          <ul>
+            <li>200g paneer, cut into cubes</li>
+            <li>2 medium tomatoes, pureed</li>
+            <li>1 medium onion, finely chopped</li>
+            <li>2 tablespoons butter</li>
+            <li>1 tablespoon oil</li>
+            <li>1 teaspoon ginger-garlic paste</li>
+            <li>1/2 teaspoon turmeric powder</li>
+            <li>1 teaspoon red chili powder</li>
+            <li>1 teaspoon garam masala</li>
+            <li>1/2 cup cream or milk</li>
+            <li>Salt to taste</li>
+            <li>Fresh coriander for garnish</li>
+          </ul>
+        </section>
+        <section class="nutition-value-section">
+          <h2>NUTRITIONAL VALUE</h2>
+          <p>Approximate values per serving</p>
+          <ul>
+            <li>Calories: 350–450 kcal</li>
+            <li>Protein: 14–18g</li>
+            <li>Carbohydrates: 15–20g</li>
+            <li>Fat: 25–32g</li>
+            <li>Fiber: 3–5g</li>
+            <li>Calcium: High, mainly from paneer</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="recipe-grid">
+        <section class="recipe-section">
+          <h2>RECIPE STEPS</h2>
+          <ol>
+            <li>Heat butter and oil in a pan over medium heat.</li>
+            <li>Add chopped onion and cook until soft and light golden.</li>
+            <li>Add ginger-garlic paste and sauté for one minute.</li>
+            <li>Add tomato puree, turmeric, red chili powder, and salt.</li>
+            <li>
+              Cook until the tomato mixture thickens and oil starts separating.
+            </li>
+            <li>Add cream or milk and mix well to create a smooth gravy.</li>
+            <li>Add paneer cubes and simmer for 4–5 minutes.</li>
+            <li>Add garam masala and mix gently.</li>
+            <li>
+              Garnish with fresh coriander and serve hot with naan or rice.
+            </li>
+          </ol>
+        </section>
+        <div class="recipe-side-section">
+          <section class="recipe-video-section">
+            <h2>RECIPE VIDEO</h2>
+            <p>Video will be added here</p>
+          </section>
+          <section class="socialmedia-feedback-section">
+            <h2>Share & Feedback</h2>
+            <p>Coming Soon</p>
+          </section>
+          <section class="recipe-assistance-section">
+            <h2>Live Assistant</h2>
+            <p>Coming Soon</p>
+          </section>
+        </div>
+      </div>
+      <section class="similar-dishes-section">
+        <h2>Similar dishes</h2>
+        <p>Coming soon</p>
+      </section>
+    </main>
+    <footer>
+      <h2>All rights reserved</h2>
+    </footer>
+  </body>
+</html>

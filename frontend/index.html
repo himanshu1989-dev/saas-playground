@@ -313,6 +313,19 @@
         box-shadow: 0 8px 18px rgba(234, 88, 12, 0.28);
       }
 
+      .test-Recipe-button {
+        margin-top: 24px;
+        padding: 16px 42px;
+        border: none;
+        border-radius: 12px;
+        background: #ea580c;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(234, 88, 12, 0.28);
+      }
+
       .analyze-button:hover {
         background: #c2410c;
       }
@@ -578,9 +591,7 @@
               onchange="uploadSelectedDishImage()"
             />
 
-            <div id="uploadStatus" class="upload-status">
-              No image uploaded
-            </div>
+            <div id="uploadStatus" class="upload-status">No image uploaded</div>
           </div>
         </div>
 
@@ -590,6 +601,13 @@
           class="analyze-button"
         >
           Analyze Dish
+        </button>
+        <button
+          id="testRecipePage"
+          onclick="testRecipePage()"
+          class="test-Recipe-button"
+        >
+          Test Receipe Page
         </button>
       </section>
 
@@ -712,7 +730,8 @@
           } catch (error) {
             console.error("Upload response parse error:", error);
 
-            uploadStatus.textContent = "Upload completed, but response was invalid.";
+            uploadStatus.textContent =
+              "Upload completed, but response was invalid.";
             uploadStatus.className = "upload-status error";
 
             resultSection.textContent =
@@ -757,6 +776,9 @@
           resultSection.textContent =
             "Failed to analyze image. Check browser console.";
         }
+      }
+      function testRecipePage() {
+        window.location.href = "./recipe.html";
       }
     </script>
   </body>
