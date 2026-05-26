@@ -302,54 +302,34 @@
     },
 
     "nutritionSummary": {
-      "calculationBasis": "Derived from ingredient-level nutrition values and divided by serving size.",
-      "servings": 3,
-      "perServing": {
+      "note": "Approximate nutrition values based on the listed ingredients. Actual values may vary based on ingredient brand, exact quantity, portion size, and cooking method.",
+      "values": {
         "calories": {
-          "value": 430,
+          "value": 1290,
           "unit": "kcal"
         },
         "protein": {
-          "value": 15,
+          "value": 45,
           "unit": "g"
         },
         "carbohydrates": {
-          "value": 12,
+          "value": 36,
           "unit": "g"
         },
         "fat": {
-          "value": 38,
+          "value": 114,
           "unit": "g"
         },
         "fiber": {
-          "value": 2,
+          "value": 6,
           "unit": "g"
         },
         "calcium": {
-          "value": 320,
+          "value": 960,
           "unit": "mg"
         }
-      },
-      "sourceLinks": [
-        {
-          "country": "US",
-          "source": "USDA FoodData Central",
-          "url": ""
-        },
-        {
-          "country": "US",
-          "source": "FDA Nutrition Information",
-          "url": ""
-        },
-        {
-          "country": "India",
-          "source": "FSSAI",
-          "url": ""
-        }
-      ],
-      "disclaimer": "Nutrition values are estimates based on ingredients, quantities, and serving size. Actual values may vary based on brands, preparation method, and portion size."
+      }
     },
-
     "steps": [
       {
         "stepNumber": 1,
