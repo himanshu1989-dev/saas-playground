@@ -52,6 +52,7 @@ export async function analyzeDishController(req, res) {
       aboutDish: recipe.aboutDish,
       ingredients: recipe.ingredients,
       steps: recipe.steps,
+      nutritionSummary: recipe.nutritionSummary,
     };
 
     res.statusCode = 200;

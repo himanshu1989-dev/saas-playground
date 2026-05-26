@@ -7,6 +7,7 @@ export function findRecipeByDishId(dishName) {
         aboutDish: recipes[i].aboutDish,
         ingredients: recipes[i].ingredients,
         steps: recipes[i].steps,
+        nutritionSummary: recipes[i].nutritionSummary,
       };
     }
   }
