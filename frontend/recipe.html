@@ -292,7 +292,7 @@
           <ul id="idIngredientList"></ul>
         </section>
         <section id="idNutritionalValueSection" class="nutrition-value-section">
-          <h2>APPROXIMATE NUTRITION SUMMARY</h2>
+          <h2>NUTRITION SUMMARY</h2>
           <ul id="idNutritionList"></ul>
         </section>
       </div>
@@ -370,7 +370,7 @@
         
         for (const i in values)
         {
-            const nutritionItem = values[key];
+            const nutritionItem = values[i];
             const item = `${nutritionItem} - ${nutritionItem.value} ${nutritionItem.unit}`;
             const li = document.createElement("li");
             li.textContent = item;
