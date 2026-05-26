@@ -305,7 +305,6 @@
         <div class="recipe-side-section">
           <section id="idRecipeVideoSection" class="recipe-video-section">
             <h2>RECIPE VIDEO</h2>
-            <p>Coming Soon</p>
           </section>
           <section
             id="idSocialMediaSection"
@@ -365,18 +364,31 @@
         const nutritionList = document.getElementById("idNutritionList");
         nutritionList.innerHTML = "";
 
-
         const values = recipeData.nutritionSummary.values;
-        
-        for (const i in values)
-        {
-            const nutritionItem = values[i];
-            const item = `${i}:  ${nutritionItem.value} ${nutritionItem.unit}`;
-            const li = document.createElement("li");
-            li.textContent = item;
-            nutritionList.appendChild(li);
+
+        for (const i in values) {
+          const nutritionItem = values[i];
+          const item = `${i}:  ${nutritionItem.value} ${nutritionItem.unit}`;
+          const li = document.createElement("li");
+          li.textContent = item;
+          nutritionList.appendChild(li);
         }
 
+        const recipeVideoSection = document.getElementById(
+          "idRecipeVideoSection",
+        );
+
+        // Clear old video if needed, but keep the heading
+        const iframe = document.createElement("iframe");
+
+        iframe.src = recipeData.videoUrl;
+        iframe.width = "560";
+        iframe.height = "315";
+        iframe.title = "Recipe video";
+        iframe.frameBorder = "0";
+        iframe.allowFullscreen = true;
+
+        recipeVideoSection.appendChild(iframe);
       }
     </script>
   </body>
