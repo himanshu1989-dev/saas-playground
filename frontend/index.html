@@ -769,8 +769,10 @@
             resultSection.textContent = JSON.stringify(data, null, 2);
             return;
           }
-
-          resultSection.textContent = JSON.stringify(data, null, 2);
+          
+          sessionStorage.setItem("recipeData",JSON.stringify(data));
+          window.location.href = "./recipe.html";
+          /*resultSection.textContent = JSON.stringify(data, null, 2);*/
         } catch (error) {
           console.error("Analyze Error:", error);
           resultSection.textContent =

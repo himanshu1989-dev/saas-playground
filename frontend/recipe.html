@@ -322,5 +322,13 @@
     <footer>
       <h2>All rights reserved</h2>
     </footer>
+    <script>
+        const storedRecipeData = sessionStorage.getItem("recipeData");
+        if(storedRecipeData)
+        {
+            const recipeData = JSON.parse(storedRecipeData);
+            document.getElementById("idAboutDishSection").textContent = recipeData.aboutDish;
+        }
+    </script>
   </body>
 </html>
