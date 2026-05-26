@@ -53,7 +53,7 @@ export async function analyzeDishController(req, res) {
       ingredients: recipe.ingredients,
       steps: recipe.steps,
       nutritionSummary: recipe.nutritionSummary,
-      videoUrl: recipes[i].videoUrl,
+      videoUrl: recipe.videoUrl,
     };
 
     res.statusCode = 200;
