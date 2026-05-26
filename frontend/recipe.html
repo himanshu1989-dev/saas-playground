@@ -101,7 +101,7 @@
         margin: 0 auto 56px auto;
         padding: 36px 48px;
         background: #fffaf3;
-       /* border-left: 6px solid #ea580c; */
+        border-left: 6px solid hsl(21, 86%, 47%);
         border-radius: 18px;
         text-align: center;
         box-shadow: 0 8px 24px rgba(124, 45, 18, 0.12);
@@ -289,6 +289,7 @@
       <div class="ingredient-nutrition-sidebyside">
         <section id="idIngredientsSection" class="ingredients-section">
           <h2>INGREDIENTS</h2>
+          <ul id="idIngredientList"></ul>
         </section>
         <section id="idNutritionalValueSection" class="nutrition-value-section">
           <h2>NUTRITIONAL VALUE</h2>
@@ -298,17 +299,24 @@
       <div class="recipe-grid">
         <section id="idRecipeSection" class="recipe-section">
           <h2>RECIPE STEPS</h2>
+          <ol id="idStepsList"></ol>
         </section>
         <div class="recipe-side-section">
           <section id="idRecipeVideoSection" class="recipe-video-section">
             <h2>RECIPE VIDEO</h2>
             <p>Coming Soon</p>
           </section>
-          <section id="idSocialMediaSection" class="socialmedia-feedback-section">
+          <section
+            id="idSocialMediaSection"
+            class="socialmedia-feedback-section"
+          >
             <h2>SHARE & FEEDBACK</h2>
             <p>Coming Soon</p>
           </section>
-          <section id="idRecipeAssistanceSection" class="recipe-assistance-section">
+          <section
+            id="idRecipeAssistanceSection"
+            class="recipe-assistance-section"
+          >
             <h2>LIVE ASSISTANCE</h2>
             <p>Coming Soon</p>
           </section>
@@ -323,12 +331,39 @@
       <h2>All rights reserved</h2>
     </footer>
     <script>
-        const storedRecipeData = sessionStorage.getItem("recipeData");
-        if(storedRecipeData)
+      const storedRecipeData = sessionStorage.getItem("recipeData");
+      if (storedRecipeData) {
+        const recipeData = JSON.parse(storedRecipeData);
+        document.getElementById("idAboutDishSection").textContent =
+          recipeData.aboutDish;
+
+        
+        const ingredientList = document.getElementById("idIngredientList");
+        
+        for (const key in recipeData.ingredients)
         {
-            const recipeData = JSON.parse(storedRecipeData);
-            document.getElementById("idAboutDishSection").textContent = recipeData.aboutDish;
+            const ingredients = recipeData.ingredients[key];
+            const ingredientDetails = `${ingredients.displayName} - ${ingredients.quantity} ${ingredients.unit}`;
+
+            const li = document.createElement("li");
+            li.textContent = ingredientDetails;
+
+            ingredientList.appendChild(li);
         }
+
+        const stepsList = document.getElementById("idStepsList");
+
+        for(const i in recipeData.steps)
+        {
+            const step = recipeData.steps[i];
+            const stepDetails = `${step.instruction}`;
+            
+            const li = document.createElement("li");
+            li.textContent = stepDetails;
+
+            stepsList.appendChild(li);
+        }
+      }
     </script>
   </body>
 </html>
