@@ -49,6 +49,7 @@ export async function analyzeDishController(req, res) {
 
     const response = {
       dish: dish,
+      aboutDish: recipe.aboutDish,
       ingredients: recipe.ingredients,
       steps: recipe.steps,
     };

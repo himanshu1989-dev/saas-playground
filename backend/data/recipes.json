@@ -1,51 +1,20 @@
 [
   {
-    "dishId": "paneer-butter-masala",
-    "dishName": "Paneer Butter Masala",
+    "dishName": "Matar Paneer",
     "aliases": [
-      "Paneer Makhani",
-      "Butter Paneer",
-      "Paneer Butter Curry",
-      "Paneer Butter Masala Curry"
+      "Matar Paneer Curry",
+      "Paneer Peas Curry",
+      "Matar Paneer Gravy"
     ],
 
     "classification": {
-      "cuisine": "North Indian",
-      "countryOfOrigin": "India",
-      "regionOfOrigin": "Delhi / Punjab region",
-      "popularRegions": [
-        "India",
-        "United States",
-        "Canada",
-        "United Kingdom",
-        "Australia",
-        "Middle East"
-      ],
       "dietCategory": "vegetarian",
       "isVegan": false,
       "isVegetarian": true,
       "isNonVegetarian": false,
-      "spiceLevel": "medium"
     },
 
     "aboutDish": "Paneer Butter Masala is a rich North Indian curry made with paneer, tomato, butter, cream, and aromatic spices. It is believed to have originated around the Delhi and Punjab region, inspired by popular restaurant-style tomato-butter gravies. Today, it is widely eaten across India and in Indian restaurants around the world as a popular vegetarian dish.",
-
-    "dishHistory": {
-      "originStory": "Paneer Butter Masala is believed to have developed from North Indian restaurant-style tomato-butter gravies, especially around Delhi and Punjab.",
-      "culturalContext": "It became popular as a rich vegetarian alternative to butter chicken-style gravies.",
-      "traditionalOccasions": [
-        "Restaurant meals",
-        "Family dinners",
-        "Festive vegetarian meals"
-      ]
-    },
-
-    "recognition": {
-      "isMichelinRecognized": false,
-      "michelinNotes": "Michelin stars are awarded to restaurants, not individual dishes. This dish may be served by notable or Michelin-recognized Indian restaurants.",
-      "famousRestaurants": []
-    },
-
     "ingredients": {
       "paneer": {
         "displayName": "Paneer",
@@ -428,9 +397,7 @@
         "imageUrl": ""
       }
     ],
-
     "videoUrl": "",
-
     "similarDishes": [
       {
         "dishName": "Paneer Tikka Masala",
