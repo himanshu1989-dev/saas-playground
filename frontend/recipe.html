@@ -283,55 +283,60 @@
       </div>
     </header>
     <main>
-      <section id="idAboutDishSection" class="about-dish-section">
-        <h2>About this Dish</h2>
-      </section>
-      <div class="ingredient-nutrition-sidebyside">
-        <section id="idIngredientsSection" class="ingredients-section">
-          <h2>INGREDIENTS</h2>
-          <ul id="idIngredientList"></ul>
+      <!--
+        <section id="idAboutDishSection" class="about-dish-section">
+          <h2>About this Dish</h2>
         </section>
-        <section id="idNutritionalValueSection" class="nutrition-value-section">
-          <h2>NUTRITION SUMMARY</h2>
-          <ul id="idNutritionList"></ul>
-        </section>
-      </div>
-
-      <div class="recipe-grid">
-        <section id="idRecipeSection" class="recipe-section">
-          <h2>RECIPE STEPS</h2>
-          <ol id="idStepsList"></ol>
-        </section>
-        <div class="recipe-side-section">
-          <section id="idRecipeVideoSection" class="recipe-video-section">
-            <h2>RECIPE VIDEO</h2>
+        <div class="ingredient-nutrition-sidebyside">
+          <section id="idIngredientsSection" class="ingredients-section">
+            <h2>INGREDIENTS</h2>
+            <ul id="idIngredientList"></ul>
           </section>
-          <section
-            id="idSocialMediaSection"
-            class="socialmedia-feedback-section"
-          >
-            <h2>SHARE & FEEDBACK</h2>
-            <p>Coming Soon</p>
-          </section>
-          <section
-            id="idRecipeAssistanceSection"
-            class="recipe-assistance-section"
-          >
-            <h2>LIVE ASSISTANCE</h2>
-            <p>Coming Soon</p>
+          <section id="idNutritionalValueSection" class="nutrition-value-section">
+            <h2>NUTRITION SUMMARY</h2>
+            <ul id="idNutritionList"></ul>
           </section>
         </div>
-      </div>
-      <section class="similar-dishes-section">
-        <h2>SIMILAR DISHES</h2>
-        <p>Coming soon</p>
-      </section>
-    </main>
+
+        <div class="recipe-grid">
+          <section id="idRecipeSection" class="recipe-section">
+            <h2>RECIPE STEPS</h2>
+            <ol id="idStepsList"></ol>
+          </section>
+          <div class="recipe-side-section">
+            <section id="idRecipeVideoSection" class="recipe-video-section">
+              <h2>RECIPE VIDEO</h2>
+            </section>
+            <section
+              id="idSocialMediaSection"
+              class="socialmedia-feedback-section"
+            >
+              <h2>SHARE & FEEDBACK</h2>
+              <p>Coming Soon</p>
+            </section>
+            <section
+              id="idRecipeAssistanceSection"
+              class="recipe-assistance-section"
+            >
+              <h2>LIVE ASSISTANCE</h2>
+              <p>Coming Soon</p>
+            </section>
+          </div>
+        </div>
+        <section class="similar-dishes-section">
+          <h2>SIMILAR DISHES</h2>
+          <p>Coming soon</p>
+        </section>
+    --></main>
     <footer>
       <h2>All rights reserved</h2>
     </footer>
+    <script src="./js/recipe.js"></script>
     <script>
       const storedRecipeData = sessionStorage.getItem("recipeData");
+      const builder = new RecipePageBuilder(storedRecipeData);
+      builder.createAndPopulateAboutDishSection();
+      <!--
       if (storedRecipeData) {
         const recipeData = JSON.parse(storedRecipeData);
         document.getElementById("idAboutDishSection").textContent =
@@ -390,6 +395,7 @@
 
         recipeVideoSection.appendChild(iframe);
       }
+      -->
     </script>
   </body>
 </html>

@@ -1,383 +1,1130 @@
 [
   {
+    "dishId": "matar_paneer",
     "dishName": "Matar Paneer",
     "aliases": [
       "Matar Paneer Curry",
       "Paneer Peas Curry",
-      "Matar Paneer Gravy"
+      "Matar Paneer Gravy",
+      "Mattar Paneer",
+      "Green Peas Paneer Curry"
     ],
-
     "classification": {
       "dietCategory": "vegetarian",
       "isVegan": false,
       "isVegetarian": true,
       "isNonVegetarian": false
     },
-
-    "aboutDish": "Paneer Butter Masala is a rich North Indian curry made with paneer, tomato, butter, cream, and aromatic spices. It is believed to have originated around the Delhi and Punjab region, inspired by popular restaurant-style tomato-butter gravies. Today, it is widely eaten across India and in Indian restaurants around the world as a popular vegetarian dish.",
-    "ingredients": {
-      "paneer": {
-        "displayName": "Paneer",
-        "quantity": 200,
-        "unit": "g",
-        "category": "Dairy",
-        "optional": false,
-        "allergens": ["milk", "dairy"],
-        "buySearchTerm": "paneer cheese",
-        "buyLinks": [
+    "aboutDish": "Matar Paneer is a popular North Indian vegetarian curry made with paneer and green peas cooked in a spiced onion-tomato gravy. It is commonly served with roti, naan, paratha, or rice.",
+    "allergenSummary": {
+      "calculationBasis": "Derived from ingredient-level allergen data across recipe options.",
+      "contains": [
+        "milk",
+        "dairy"
+      ],
+      "mayContain": [
+        "tree nuts"
+      ],
+      "allergenWarning": "Contains dairy because paneer is used. Some variations may contain tree nuts if cashew paste or cream-based ingredients are added. Always verify packaged ingredient labels before cooking."
+    },
+    "recipeOptions": [
+      {
+        "optionId": "easy",
+        "skillLevel": "Easy",
+        "label": "Easy • 25 min",
+        "prepTimeMinutes": 10,
+        "cookTimeMinutes": 15,
+        "totalTimeMinutes": 25,
+        "servings": 2,
+        "optionDescription": "A quick weeknight version using simple ingredients and fewer steps.",
+        "ingredients": {
+          "paneer": {
+            "displayName": "Paneer",
+            "quantity": 200,
+            "unit": "g",
+            "category": "Dairy",
+            "optional": false,
+            "allergens": [
+              "milk",
+              "dairy"
+            ],
+            "buySearchTerm": "paneer cheese",
+            "buyLinks": [
+              {
+                "country": "US",
+                "store": "Walmart",
+                "url": ""
+              },
+              {
+                "country": "US",
+                "store": "Amazon Fresh",
+                "url": ""
+              }
+            ],
+            "nutrition": {
+              "calories": {
+                "value": 530,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 36,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 6,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 42,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 0,
+                "unit": "g"
+              },
+              "calcium": {
+                "value": 960,
+                "unit": "mg"
+              }
+            }
+          },
+          "greenPeas": {
+            "displayName": "Green peas",
+            "quantity": 1,
+            "unit": "cup",
+            "category": "Vegetable",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "frozen green peas",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 118,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 8,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 21,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 1,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 7,
+                "unit": "g"
+              }
+            }
+          },
+          "tomatoPuree": {
+            "displayName": "Tomato puree",
+            "quantity": 0.75,
+            "unit": "cup",
+            "category": "Vegetable",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "tomato puree",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 70,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 3,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 15,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 0.5,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 4,
+                "unit": "g"
+              }
+            }
+          },
+          "oil": {
+            "displayName": "Oil",
+            "quantity": 1,
+            "unit": "tbsp",
+            "category": "Cooking Fat",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "cooking oil",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 120,
+                "unit": "kcal"
+              },
+              "fat": {
+                "value": 14,
+                "unit": "g"
+              }
+            }
+          },
+          "gingerGarlicPaste": {
+            "displayName": "Ginger-garlic paste",
+            "quantity": 1,
+            "unit": "tsp",
+            "category": "Spice / Aromatic",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "ginger garlic paste",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 5,
+                "unit": "kcal"
+              }
+            }
+          },
+          "turmericPowder": {
+            "displayName": "Turmeric powder",
+            "quantity": 0.25,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "turmeric powder",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 2,
+                "unit": "kcal"
+              }
+            }
+          },
+          "redChiliPowder": {
+            "displayName": "Red chili powder",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "red chili powder",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 3,
+                "unit": "kcal"
+              }
+            }
+          },
+          "garamMasala": {
+            "displayName": "Garam masala",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "garam masala",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 4,
+                "unit": "kcal"
+              }
+            }
+          },
+          "salt": {
+            "displayName": "Salt",
+            "quantity": 0.75,
+            "unit": "tsp",
+            "category": "Seasoning",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "salt",
+            "buyLinks": [],
+            "nutrition": {}
+          }
+        },
+        "nutritionSummary": {
+          "note": "Approximate nutrition values based on the listed ingredients for the full recipe. Values may vary by ingredient brand and portion size.",
+          "values": {
+            "calories": {
+              "value": 852,
+              "unit": "kcal"
+            },
+            "protein": {
+              "value": 47,
+              "unit": "g"
+            },
+            "carbohydrates": {
+              "value": 42,
+              "unit": "g"
+            },
+            "fat": {
+              "value": 58,
+              "unit": "g"
+            },
+            "fiber": {
+              "value": 11,
+              "unit": "g"
+            },
+            "calcium": {
+              "value": 960,
+              "unit": "mg"
+            }
+          }
+        },
+        "steps": [
           {
-            "country": "US",
-            "store": "Walmart",
-            "url": ""
+            "stepNumber": 1,
+            "instruction": "Heat oil in a pan over medium heat.",
+            "imageUrl": ""
           },
           {
-            "country": "US",
-            "store": "Amazon Fresh",
-            "url": ""
+            "stepNumber": 2,
+            "instruction": "Add ginger-garlic paste and sauté for about 30 seconds.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 3,
+            "instruction": "Add tomato puree, turmeric, red chili powder, and salt.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 4,
+            "instruction": "Cook for 5-6 minutes until the tomato mixture thickens slightly.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 5,
+            "instruction": "Add green peas and cook for 3-4 minutes.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 6,
+            "instruction": "Add paneer cubes and gently mix.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 7,
+            "instruction": "Add garam masala and simmer for 2-3 minutes.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 8,
+            "instruction": "Serve hot with roti, naan, or rice.",
+            "imageUrl": ""
           }
         ],
-        "nutrition": {
-          "calories": {
-            "value": 530,
-            "unit": "kcal"
-          },
-          "protein": {
-            "value": 36,
-            "unit": "g"
-          },
-          "carbohydrates": {
-            "value": 6,
-            "unit": "g"
-          },
-          "fat": {
-            "value": 42,
-            "unit": "g"
-          },
-          "fiber": {
-            "value": 0,
-            "unit": "g"
-          },
-          "calcium": {
-            "value": 960,
-            "unit": "mg"
-          }
-        }
+        "videoUrl": "https://www.youtube-nocookie.com/embed/VyUSHuzyL4g"
       },
-
-      "tomatoes": {
-        "displayName": "Tomatoes",
-        "quantity": 2,
-        "unit": "medium",
-        "category": "Vegetable",
-        "optional": false,
-        "allergens": [],
-        "buySearchTerm": "fresh tomatoes",
-        "buyLinks": [],
-        "nutrition": {
-          "calories": {
-            "value": 44,
-            "unit": "kcal"
+      {
+        "optionId": "moderate",
+        "skillLevel": "Moderate",
+        "label": "Moderate • 45 min",
+        "prepTimeMinutes": 15,
+        "cookTimeMinutes": 30,
+        "totalTimeMinutes": 45,
+        "servings": 3,
+        "optionDescription": "A more balanced homemade version with onion-tomato gravy and better flavor depth.",
+        "ingredients": {
+          "paneer": {
+            "displayName": "Paneer",
+            "quantity": 250,
+            "unit": "g",
+            "category": "Dairy",
+            "optional": false,
+            "allergens": [
+              "milk",
+              "dairy"
+            ],
+            "buySearchTerm": "paneer cheese",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 662,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 45,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 8,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 53,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 0,
+                "unit": "g"
+              },
+              "calcium": {
+                "value": 1200,
+                "unit": "mg"
+              }
+            }
           },
-          "protein": {
-            "value": 2,
-            "unit": "g"
+          "greenPeas": {
+            "displayName": "Green peas",
+            "quantity": 1.25,
+            "unit": "cup",
+            "category": "Vegetable",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "frozen green peas",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 148,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 10,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 26,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 1,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 9,
+                "unit": "g"
+              }
+            }
           },
-          "carbohydrates": {
-            "value": 10,
-            "unit": "g"
+          "onion": {
+            "displayName": "Onion",
+            "quantity": 1,
+            "unit": "medium",
+            "category": "Vegetable",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "yellow onion",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 44,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 1.2,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 10,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 0.1,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 1.9,
+                "unit": "g"
+              }
+            }
           },
-          "fat": {
-            "value": 0.4,
-            "unit": "g"
+          "tomatoes": {
+            "displayName": "Tomatoes",
+            "quantity": 2,
+            "unit": "medium",
+            "category": "Vegetable",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "fresh tomatoes",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 44,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 2,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 10,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 0.4,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 3,
+                "unit": "g"
+              }
+            }
           },
-          "fiber": {
-            "value": 3,
-            "unit": "g"
+          "oil": {
+            "displayName": "Oil",
+            "quantity": 1.5,
+            "unit": "tbsp",
+            "category": "Cooking Fat",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "cooking oil",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 180,
+                "unit": "kcal"
+              },
+              "fat": {
+                "value": 21,
+                "unit": "g"
+              }
+            }
+          },
+          "gingerGarlicPaste": {
+            "displayName": "Ginger-garlic paste",
+            "quantity": 1.5,
+            "unit": "tsp",
+            "category": "Spice / Aromatic",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "ginger garlic paste",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 8,
+                "unit": "kcal"
+              }
+            }
+          },
+          "cuminSeeds": {
+            "displayName": "Cumin seeds",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "cumin seeds",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 4,
+                "unit": "kcal"
+              }
+            }
+          },
+          "turmericPowder": {
+            "displayName": "Turmeric powder",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "turmeric powder",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 4,
+                "unit": "kcal"
+              }
+            }
+          },
+          "redChiliPowder": {
+            "displayName": "Red chili powder",
+            "quantity": 1,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "red chili powder",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 6,
+                "unit": "kcal"
+              }
+            }
+          },
+          "corianderPowder": {
+            "displayName": "Coriander powder",
+            "quantity": 1,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "coriander powder",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 5,
+                "unit": "kcal"
+              }
+            }
+          },
+          "garamMasala": {
+            "displayName": "Garam masala",
+            "quantity": 1,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "garam masala",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 7,
+                "unit": "kcal"
+              }
+            }
+          },
+          "salt": {
+            "displayName": "Salt",
+            "quantity": 1,
+            "unit": "tsp",
+            "category": "Seasoning",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "salt",
+            "buyLinks": [],
+            "nutrition": {}
           }
-        }
-      },
-
-      "onion": {
-        "displayName": "Onion",
-        "quantity": 1,
-        "unit": "medium",
-        "category": "Vegetable",
-        "optional": false,
-        "allergens": [],
-        "buySearchTerm": "yellow onion",
-        "buyLinks": [],
-        "nutrition": {
-          "calories": {
-            "value": 44,
-            "unit": "kcal"
-          },
-          "protein": {
-            "value": 1.2,
-            "unit": "g"
-          },
-          "carbohydrates": {
-            "value": 10,
-            "unit": "g"
-          },
-          "fat": {
-            "value": 0.1,
-            "unit": "g"
-          },
-          "fiber": {
-            "value": 1.9,
-            "unit": "g"
-          }
-        }
-      },
-
-      "butter": {
-        "displayName": "Butter",
-        "quantity": 2,
-        "unit": "tbsp",
-        "category": "Dairy",
-        "optional": false,
-        "allergens": ["milk", "dairy"],
-        "buySearchTerm": "unsalted butter",
-        "buyLinks": [],
-        "nutrition": {
-          "calories": {
-            "value": 204,
-            "unit": "kcal"
-          },
-          "protein": {
-            "value": 0.2,
-            "unit": "g"
-          },
-          "carbohydrates": {
-            "value": 0,
-            "unit": "g"
-          },
-          "fat": {
-            "value": 23,
-            "unit": "g"
-          },
-          "fiber": {
-            "value": 0,
-            "unit": "g"
-          }
-        }
-      },
-
-      "cream": {
-        "displayName": "Cream",
-        "quantity": 0.5,
-        "unit": "cup",
-        "category": "Dairy",
-        "optional": false,
-        "allergens": ["milk", "dairy"],
-        "buySearchTerm": "heavy cream",
-        "buyLinks": [],
-        "nutrition": {
-          "calories": {
-            "value": 400,
-            "unit": "kcal"
-          },
-          "protein": {
-            "value": 3,
-            "unit": "g"
-          },
-          "carbohydrates": {
-            "value": 3,
-            "unit": "g"
-          },
-          "fat": {
-            "value": 43,
-            "unit": "g"
-          },
-          "fiber": {
-            "value": 0,
-            "unit": "g"
-          }
-        }
-      },
-
-      "gingerGarlicPaste": {
-        "displayName": "Ginger-garlic paste",
-        "quantity": 1,
-        "unit": "tsp",
-        "category": "Spice / Aromatic",
-        "optional": false,
-        "allergens": [],
-        "buySearchTerm": "ginger garlic paste",
-        "buyLinks": [],
-        "nutrition": {
-          "calories": {
-            "value": 5,
-            "unit": "kcal"
-          }
-        }
-      },
-
-      "turmericPowder": {
-        "displayName": "Turmeric powder",
-        "quantity": 0.5,
-        "unit": "tsp",
-        "category": "Spice",
-        "optional": false,
-        "allergens": [],
-        "buySearchTerm": "turmeric powder",
-        "buyLinks": [],
-        "nutrition": {
-          "calories": {
-            "value": 4,
-            "unit": "kcal"
-          }
-        }
-      },
-
-      "redChiliPowder": {
-        "displayName": "Red chili powder",
-        "quantity": 1,
-        "unit": "tsp",
-        "category": "Spice",
-        "optional": false,
-        "allergens": [],
-        "buySearchTerm": "red chili powder",
-        "buyLinks": [],
-        "nutrition": {
-          "calories": {
-            "value": 6,
-            "unit": "kcal"
-          }
-        }
-      },
-
-      "garamMasala": {
-        "displayName": "Garam masala",
-        "quantity": 1,
-        "unit": "tsp",
-        "category": "Spice",
-        "optional": false,
-        "allergens": [],
-        "buySearchTerm": "garam masala",
-        "buyLinks": [],
-        "nutrition": {
-          "calories": {
-            "value": 7,
-            "unit": "kcal"
-          }
-        }
-      },
-
-      "cashewPaste": {
-        "displayName": "Cashew paste",
-        "quantity": 2,
-        "unit": "tbsp",
-        "category": "Nut",
-        "optional": true,
-        "allergens": ["tree nuts"],
-        "buySearchTerm": "cashew paste",
-        "buyLinks": [],
-        "nutrition": {
-          "calories": {
-            "value": 95,
-            "unit": "kcal"
-          },
-          "protein": {
-            "value": 3,
-            "unit": "g"
-          },
-          "carbohydrates": {
-            "value": 5,
-            "unit": "g"
-          },
-          "fat": {
-            "value": 8,
-            "unit": "g"
-          }
-        }
-      }
-    },
-
-    "allergenSummary": {
-      "calculationBasis": "Derived from ingredient-level allergen data.",
-      "contains": ["milk", "dairy"],
-      "mayContain": ["tree nuts"],
-      "allergenWarning": "Contains dairy. May contain tree nuts depending on recipe variation. Always verify packaged ingredient labels before cooking."
-    },
-
-    "nutritionSummary": {
-      "note": "Approximate nutrition values based on the listed ingredients. Actual values may vary based on ingredient brand, exact quantity, portion size, and cooking method.",
-      "values": {
-        "calories": {
-          "value": 1290,
-          "unit": "kcal"
         },
-        "protein": {
-          "value": 45,
-          "unit": "g"
+        "nutritionSummary": {
+          "note": "Approximate nutrition values based on the listed ingredients for the full recipe. Values may vary by ingredient brand and portion size.",
+          "values": {
+            "calories": {
+              "value": 1112,
+              "unit": "kcal"
+            },
+            "protein": {
+              "value": 58,
+              "unit": "g"
+            },
+            "carbohydrates": {
+              "value": 64,
+              "unit": "g"
+            },
+            "fat": {
+              "value": 76,
+              "unit": "g"
+            },
+            "fiber": {
+              "value": 14,
+              "unit": "g"
+            },
+            "calcium": {
+              "value": 1200,
+              "unit": "mg"
+            }
+          }
         },
-        "carbohydrates": {
-          "value": 36,
-          "unit": "g"
+        "steps": [
+          {
+            "stepNumber": 1,
+            "instruction": "Heat oil in a pan and add cumin seeds.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 2,
+            "instruction": "Add chopped onion and cook until soft and light golden.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 3,
+            "instruction": "Add ginger-garlic paste and sauté for one minute.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 4,
+            "instruction": "Add chopped tomatoes, turmeric, red chili powder, coriander powder, and salt.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 5,
+            "instruction": "Cook until the tomatoes soften and the masala becomes thick.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 6,
+            "instruction": "Blend the masala if a smoother gravy is desired, then return it to the pan.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 7,
+            "instruction": "Add green peas and a little water. Simmer until peas are tender.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 8,
+            "instruction": "Add paneer cubes and simmer for 5 minutes.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 9,
+            "instruction": "Add garam masala and mix gently.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 10,
+            "instruction": "Serve hot with naan, roti, paratha, or rice.",
+            "imageUrl": ""
+          }
+        ],
+        "videoUrl": "https://www.youtube-nocookie.com/embed/VyUSHuzyL4g"
+      },
+      {
+        "optionId": "advanced",
+        "skillLevel": "Advanced",
+        "label": "Advanced • 75 min",
+        "prepTimeMinutes": 25,
+        "cookTimeMinutes": 50,
+        "totalTimeMinutes": 75,
+        "servings": 4,
+        "optionDescription": "A richer restaurant-style version with layered gravy, optional cashew paste, and more controlled cooking.",
+        "ingredients": {
+          "paneer": {
+            "displayName": "Paneer",
+            "quantity": 300,
+            "unit": "g",
+            "category": "Dairy",
+            "optional": false,
+            "allergens": [
+              "milk",
+              "dairy"
+            ],
+            "buySearchTerm": "paneer cheese",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 795,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 54,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 9,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 63,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 0,
+                "unit": "g"
+              },
+              "calcium": {
+                "value": 1440,
+                "unit": "mg"
+              }
+            }
+          },
+          "greenPeas": {
+            "displayName": "Green peas",
+            "quantity": 1.5,
+            "unit": "cup",
+            "category": "Vegetable",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "frozen green peas",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 177,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 12,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 32,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 1.5,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 11,
+                "unit": "g"
+              }
+            }
+          },
+          "onions": {
+            "displayName": "Onions",
+            "quantity": 2,
+            "unit": "medium",
+            "category": "Vegetable",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "yellow onions",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 88,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 2.4,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 20,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 0.2,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 3.8,
+                "unit": "g"
+              }
+            }
+          },
+          "tomatoes": {
+            "displayName": "Tomatoes",
+            "quantity": 3,
+            "unit": "medium",
+            "category": "Vegetable",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "fresh tomatoes",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 66,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 3,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 15,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 0.6,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 4.5,
+                "unit": "g"
+              }
+            }
+          },
+          "oil": {
+            "displayName": "Oil",
+            "quantity": 2,
+            "unit": "tbsp",
+            "category": "Cooking Fat",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "cooking oil",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 240,
+                "unit": "kcal"
+              },
+              "fat": {
+                "value": 28,
+                "unit": "g"
+              }
+            }
+          },
+          "cream": {
+            "displayName": "Cream",
+            "quantity": 0.25,
+            "unit": "cup",
+            "category": "Dairy",
+            "optional": true,
+            "allergens": [
+              "milk",
+              "dairy"
+            ],
+            "buySearchTerm": "heavy cream",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 200,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 1.5,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 1.5,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 21.5,
+                "unit": "g"
+              },
+              "fiber": {
+                "value": 0,
+                "unit": "g"
+              }
+            }
+          },
+          "cashewPaste": {
+            "displayName": "Cashew paste",
+            "quantity": 2,
+            "unit": "tbsp",
+            "category": "Nut",
+            "optional": true,
+            "allergens": [
+              "tree nuts"
+            ],
+            "buySearchTerm": "cashew paste",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 95,
+                "unit": "kcal"
+              },
+              "protein": {
+                "value": 3,
+                "unit": "g"
+              },
+              "carbohydrates": {
+                "value": 5,
+                "unit": "g"
+              },
+              "fat": {
+                "value": 8,
+                "unit": "g"
+              }
+            }
+          },
+          "gingerGarlicPaste": {
+            "displayName": "Ginger-garlic paste",
+            "quantity": 2,
+            "unit": "tsp",
+            "category": "Spice / Aromatic",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "ginger garlic paste",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 10,
+                "unit": "kcal"
+              }
+            }
+          },
+          "cuminSeeds": {
+            "displayName": "Cumin seeds",
+            "quantity": 1,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "cumin seeds",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 8,
+                "unit": "kcal"
+              }
+            }
+          },
+          "turmericPowder": {
+            "displayName": "Turmeric powder",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "turmeric powder",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 4,
+                "unit": "kcal"
+              }
+            }
+          },
+          "redChiliPowder": {
+            "displayName": "Red chili powder",
+            "quantity": 1,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "red chili powder",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 6,
+                "unit": "kcal"
+              }
+            }
+          },
+          "corianderPowder": {
+            "displayName": "Coriander powder",
+            "quantity": 1.5,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "coriander powder",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 8,
+                "unit": "kcal"
+              }
+            }
+          },
+          "garamMasala": {
+            "displayName": "Garam masala",
+            "quantity": 1,
+            "unit": "tsp",
+            "category": "Spice",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "garam masala",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 7,
+                "unit": "kcal"
+              }
+            }
+          },
+          "kasuriMethi": {
+            "displayName": "Kasuri methi",
+            "quantity": 1,
+            "unit": "tsp",
+            "category": "Herb",
+            "optional": true,
+            "allergens": [],
+            "buySearchTerm": "kasuri methi dried fenugreek leaves",
+            "buyLinks": [],
+            "nutrition": {
+              "calories": {
+                "value": 2,
+                "unit": "kcal"
+              }
+            }
+          },
+          "salt": {
+            "displayName": "Salt",
+            "quantity": 1.25,
+            "unit": "tsp",
+            "category": "Seasoning",
+            "optional": false,
+            "allergens": [],
+            "buySearchTerm": "salt",
+            "buyLinks": [],
+            "nutrition": {}
+          }
         },
-        "fat": {
-          "value": 114,
-          "unit": "g"
+        "nutritionSummary": {
+          "note": "Approximate nutrition values based on the listed ingredients for the full recipe. Values may vary by ingredient brand, optional cream/cashew usage, portion size, and cooking method.",
+          "values": {
+            "calories": {
+              "value": 1706,
+              "unit": "kcal"
+            },
+            "protein": {
+              "value": 76,
+              "unit": "g"
+            },
+            "carbohydrates": {
+              "value": 83,
+              "unit": "g"
+            },
+            "fat": {
+              "value": 123,
+              "unit": "g"
+            },
+            "fiber": {
+              "value": 19,
+              "unit": "g"
+            },
+            "calcium": {
+              "value": 1440,
+              "unit": "mg"
+            }
+          }
         },
-        "fiber": {
-          "value": 6,
-          "unit": "g"
-        },
-        "calcium": {
-          "value": 960,
-          "unit": "mg"
-        }
-      }
-    },
-    "steps": [
-      {
-        "stepNumber": 1,
-        "instruction": "Heat butter and oil in a pan over medium heat.",
-        "imageUrl": ""
-      },
-      {
-        "stepNumber": 2,
-        "instruction": "Add chopped onion and cook until soft and light golden.",
-        "imageUrl": ""
-      },
-      {
-        "stepNumber": 3,
-        "instruction": "Add ginger-garlic paste and sauté for one minute.",
-        "imageUrl": ""
-      },
-      {
-        "stepNumber": 4,
-        "instruction": "Add tomato puree, turmeric, red chili powder, and salt.",
-        "imageUrl": ""
-      },
-      {
-        "stepNumber": 5,
-        "instruction": "Cook until the tomato mixture thickens and oil starts separating.",
-        "imageUrl": ""
-      },
-      {
-        "stepNumber": 6,
-        "instruction": "Add cream or milk and mix well to create a smooth gravy.",
-        "imageUrl": ""
-      },
-      {
-        "stepNumber": 7,
-        "instruction": "Add paneer cubes and simmer for 4-5 minutes.",
-        "imageUrl": ""
-      },
-      {
-        "stepNumber": 8,
-        "instruction": "Add garam masala and mix gently.",
-        "imageUrl": ""
-      },
-      {
-        "stepNumber": 9,
-        "instruction": "Garnish with fresh coriander and serve hot with naan, roti, or rice.",
-        "imageUrl": ""
+        "steps": [
+          {
+            "stepNumber": 1,
+            "instruction": "Heat oil in a pan and add cumin seeds.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 2,
+            "instruction": "Add sliced onions and cook slowly until golden brown.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 3,
+            "instruction": "Add ginger-garlic paste and sauté until the raw smell goes away.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 4,
+            "instruction": "Add chopped tomatoes, turmeric, red chili powder, coriander powder, and salt.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 5,
+            "instruction": "Cook the masala until it thickens and oil begins to separate.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 6,
+            "instruction": "Cool slightly, blend into a smooth gravy, and return it to the pan.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 7,
+            "instruction": "Add cashew paste if using and cook for 2-3 minutes.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 8,
+            "instruction": "Add green peas and simmer with water until tender.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 9,
+            "instruction": "Add paneer cubes and simmer gently so the paneer stays soft.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 10,
+            "instruction": "Add cream if using, garam masala, and crushed kasuri methi.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 11,
+            "instruction": "Rest the curry for 5 minutes before serving so the flavors settle.",
+            "imageUrl": ""
+          },
+          {
+            "stepNumber": 12,
+            "instruction": "Serve with naan, roti, paratha, jeera rice, or plain basmati rice.",
+            "imageUrl": ""
+          }
+        ],
+        "videoUrl": "https://www.youtube-nocookie.com/embed/VyUSHuzyL4g"
       }
     ],
-    "videoUrl": "https://www.youtube-nocookie.com/embed/VyUSHuzyL4g",
     "similarDishes": [
       {
         "dishName": "Paneer Tikka Masala",
@@ -395,9 +1142,9 @@
         "relationship": "Popular paneer dish with spiced gravy"
       },
       {
-        "dishName": "Butter Chicken",
+        "dishName": "Paneer Butter Masala",
         "imageUrl": "",
-        "relationship": "Similar tomato-butter gravy, non-vegetarian"
+        "relationship": "Similar paneer curry with richer tomato-butter gravy"
       }
     ]
   }
