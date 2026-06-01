@@ -3,7 +3,6 @@
  * using the recipe realted information retrieved from the backend
  */
 class RecipePageBuilder {
-
   constructor(recipeString) {
     this.recipe = JSON.parse(recipeString);
     this.mainSection = document.getElementById("idMainSection");
@@ -17,17 +16,27 @@ class RecipePageBuilder {
     this.mainSection.appendChild(aboutDishSection);
   }
 
-  createAndPopulateIngredientsSection(recipeOption) {
-    // Create the section element
+  createAndPopulateIngredientsSection() {
     const ingredientsSection = document.createElement("section");
-
     ingredientsSection.id = "idIngredientsSection";
-
-    // Assign the CSS class already defined in CSS file
     ingredientsSection.classList.add("ingredients-section");
+    const ingredientList = document.createElement("ul");
 
-    // Add content later
-    ingredientsSection.textContent = recipeData
+    for (const recipeOption of this.recipe.recipeOptions) {
+      if(recipeOption.optionId === "easy") {
+      for (const [key, ingredient] of Object.entries(
+        recipeOption.ingredients,
+      )) {
+        const ingredientDetails = `${key} - ${ingredient.quantity}${ingredient.unit}`;
+        const li = document.createElement("li");
+        li.textContent = ingredientDetails;
+        ingredientList.appendChild(li);
+      }
+      break;
+    }
+    }
+    ingredientsSection.appendChild(ingredientList);
+    this.mainSection.appendChild(ingredientsSection);
   }
   createAndPopulateNutritionSection(recipeOption) {}
   createAndPopulateVideoSection(recipeOption) {}
