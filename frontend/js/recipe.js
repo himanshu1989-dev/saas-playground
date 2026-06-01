@@ -3,16 +3,18 @@
  * using the recipe realted information retrieved from the backend
  */
 class RecipePageBuilder {
+
   constructor(recipeString) {
     this.recipe = JSON.parse(recipeString);
+    this.mainSection = document.getElementById("idMainSection");
   }
-  
+
   createAndPopulateAboutDishSection() {
     const aboutDishSection = document.createElement("section");
     aboutDishSection.id = "idAboutDishSection";
     aboutDishSection.classList.add("about-dish-section");
     aboutDishSection.textContent = this.recipe.aboutDish;
-    document.body.appendChild(aboutDishSection);
+    this.mainSection.appendChild(aboutDishSection);
   }
 
   createAndPopulateIngredientsSection(recipeOption) {
